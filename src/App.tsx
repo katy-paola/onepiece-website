@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/homePage";
-import SagasPage from "./pages/episodes/sagasPage";
-import EpisodesPerSagaPage from "./pages/episodes/episodesPerSagaPage";
-import FruitsPage from "./pages/fruitsPage";
-import MainLayout from "./layouts/mainLayout";
+import HomePage from "./pages/HomePage";
+import SagasPage from "./pages/episodes/SagasPage";
+import EpisodesPerSagaPage from "./pages/episodes/EpisodesPerSagaPage";
+import FruitsPage from "./pages/FruitsPage";
+import MainLayout from "./layouts/MainLayout";
 import CrewPage from "./pages/CrewPage";
 import ZoroPage from "./pages/ZoroPage";
 
