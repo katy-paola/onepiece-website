@@ -5,7 +5,7 @@ export default function CakeIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={props.className ?? SVG_ATTRIBUTES.size}
+      className={props.className ? props.className : SVG_ATTRIBUTES.size}
       viewBox="0 0 16 16"
       fill="none"
     >
