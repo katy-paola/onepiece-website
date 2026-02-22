@@ -1,4 +1,4 @@
-import type { SvgAttributesProps } from "./types";
+import type { NavbarLinkProps, SvgAttributesProps } from "./types";
 
 export const SVG_ATTRIBUTES: SvgAttributesProps = {
   size: "size-4",
@@ -7,3 +7,22 @@ export const SVG_ATTRIBUTES: SvgAttributesProps = {
   strokeLinecap: "round",
   strokeLinejoin: "round",
 };
+
+export const NAVBAR_LINKS: NavbarLinkProps[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Episodes",
+    href: "/episodes",
+  },
+  {
+    label: "Crew",
+    href: "/crew",
+  },
+  {
+    label: "Fruits",
+    href: "/fruits",
+  },
+];

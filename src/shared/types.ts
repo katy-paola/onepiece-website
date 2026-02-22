@@ -8,3 +8,8 @@ export interface SvgAttributesProps {
   strokeLinecap: "round" | "butt" | "square" | "inherit" | undefined;
   strokeLinejoin: "round" | "inherit" | "miter" | "bevel" | undefined;
 }
+
+export interface NavbarLinkProps {
+  label: string;
+  href: string;
+}
