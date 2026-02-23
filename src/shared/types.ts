@@ -13,3 +13,9 @@ export interface NavbarLinkProps {
   label: string;
   href: string;
 }
+
+export interface HeroContentProps {
+  title: string;
+  paragraphs: string[];
+  subtitle?: string;
+}
