@@ -1,0 +1,92 @@
+import type { ThemeCardContent } from "./types";
+
+export const THEME_CARDS_CONTENT: ThemeCardContent[] = [
+  {
+    label: "Luffy",
+    srcImg: "/theme-card/chibi-luffy.png",
+    tooltip: {
+      message: "Shishishi! You have good taste! Hey, you... Become my nakama!",
+      idColor: "luffy-theme",
+    },
+  },
+  {
+    label: "Zoro",
+    srcImg: "/theme-card/chibi-zoro.png",
+    tooltip: {
+      message:
+        "Hmph. Smart choice. Now be quiet, I'm trying to nap... and pass the sake.",
+      idColor: "zoro-theme",
+    },
+  },
+  {
+    label: "Usopp",
+    srcImg: "/theme-card/chibi-usopp.png",
+    tooltip: {
+      message: "Of course! You're looking at the man with 8,000 followers!",
+      idColor: "usopp-theme",
+    },
+  },
+  {
+    label: "Sanji",
+    srcImg: "/theme-card/chibi-sanji.png",
+    tooltip: {
+      message:
+        "A fan?! If you're a lady, I'm yours! If you're a man... go make your own sandwich.",
+      idColor: "sanji-theme",
+    },
+  },
+  {
+    label: "Nami",
+    srcImg: "/theme-card/chibi-nami.png",
+    tooltip: {
+      message:
+        "I'm your favorite? That's sweet! Now, that'll be 100,000 Berries for the compliment.",
+      idColor: "nami-theme",
+    },
+  },
+  {
+    label: "Chopper",
+    srcImg: "/theme-card/chibi-chopper.png",
+    tooltip: {
+      message:
+        "Shut up, you jerk! Calling me your favorite doesn't make me happy at all! ♡",
+      idColor: "chopper-theme",
+    },
+  },
+  {
+    label: "Robin",
+    srcImg: "/theme-card/chibi-robin.png",
+    tooltip: {
+      message:
+        "Thank you. It's comforting to know someone will remember me when only my bones are left.",
+      idColor: "robin-theme",
+    },
+  },
+  {
+    label: "Franky",
+    srcImg: "/theme-card/chibi-franky.png",
+    tooltip: {
+      message:
+        "SUUUUPER choice! You've got style, kid! My bangs are vibrating with joy!",
+      idColor: "franky-theme",
+    },
+  },
+  {
+    label: "Brook",
+    srcImg: "/theme-card/chibi-brook.png",
+    tooltip: {
+      message:
+        "I'm so touched I could cry! But I don't have eyes to cry with! Yo-ho-ho-ho!",
+      idColor: "brook-theme",
+    },
+  },
+  {
+    label: "Jinbe",
+    srcImg: "/theme-card/chibi-jinbe.png",
+    tooltip: {
+      message:
+        "I am honored by your loyalty. I shall guard this click with my very life.",
+      idColor: "jinbe-theme",
+    },
+  },
+];
