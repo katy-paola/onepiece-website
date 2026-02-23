@@ -1,12 +1,8 @@
-export interface ThemeCardContent {
+export interface ThemeCard {
   label: string;
   srcImg: string;
   tooltip: {
     message: string;
     idColor: string;
   };
-}
-
-export interface ThemeCardProps {
-  data: ThemeCardContent;
 }

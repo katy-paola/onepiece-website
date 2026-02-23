@@ -1,6 +1,6 @@
-import type { ThemeCardContent } from "./types";
+import type { ThemeCard } from "./types";
 
-export const THEME_CARDS_CONTENT: ThemeCardContent[] = [
+export const THEME_CARDS: ThemeCard[] = [
   {
     label: "Luffy",
     srcImg: "/theme-card/chibi-luffy.png",
