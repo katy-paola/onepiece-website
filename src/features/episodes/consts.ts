@@ -2,43 +2,43 @@ import type { SagaCard } from "./types";
 
 export const SAGAS: SagaCard[] = [
   {
-    name: "East Blue",
+    title: "East Blue",
     href: "/episodes/1",
   },
   {
-    name: "Alabasta",
+    title: "Alabasta",
     href: "/episodes/2",
   },
   {
-    name: "Skypiea",
+    title: "Skypiea",
     href: "/episodes/3",
   },
   {
-    name: "Water Seven / CP9",
+    title: "Water Seven / CP9",
     href: "/episodes/4",
   },
   {
-    name: "Thriller Bark",
+    title: "Thriller Bark",
     href: "/episodes/5",
   },
   {
-    name: "War at the top",
+    title: "War at the top",
     href: "/episodes/6",
   },
   {
-    name: "Fish-Man Island",
+    title: "Fish-Man Island",
     href: "/episodes/7",
   },
   {
-    name: "Dressrosa / Pirate Alliance",
+    title: "Dressrosa / Pirate Alliance",
     href: "/episodes/8",
   },
   {
-    name: "Four Emperors",
+    title: "Four Emperors",
     href: "/episodes/9",
   },
   {
-    name: "Final Saga",
+    title: "Final Saga",
     href: "/episodes/10",
   },
 ];

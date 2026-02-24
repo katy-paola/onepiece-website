@@ -1,4 +1,9 @@
 export interface SagaCard {
-  name: string;
+  title: string;
   href: string;
+}
+
+export interface ArcLink {
+  title: string;
+  arcIndex: number;
 }

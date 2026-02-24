@@ -7,7 +7,7 @@ export default function SagasList() {
     <ul>
       {SAGAS.map((saga, index) => (
         <li key={index}>
-          <Link to={saga.href}>{saga.name}</Link>
+          <Link to={saga.href}>{saga.title}</Link>
           <ArrowRightIcon />
         </li>
       ))}
