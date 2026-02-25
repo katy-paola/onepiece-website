@@ -1,16 +1,28 @@
-import type { ReactNode } from "react";
+import { HERO_LIST } from "../consts";
 
 interface HeroProps {
-  data: {
-    title: string;
-    children: ReactNode;
-  };
+  currentHero: string;
 }
-export default function Hero({ data }: HeroProps) {
+
+export default function Hero({ currentHero }: HeroProps) {
+  const hero = HERO_LIST.find((hero) => hero.id === currentHero) ?? {
+    id: "",
+    title: "",
+    paragraphs: [],
+  };
   return (
     <section>
-      <h1>{data.title}</h1>
-      {data.children}
+      <h1>{hero.title}</h1>
+      {hero.id === "homepage" ? (
+        <div>
+          {hero.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      ) : (
+        <p>{hero.paragraphs[0]}</p>
+      )}
+      {hero.subtitle && <p>{hero.subtitle}</p>}
     </section>
   );
 }

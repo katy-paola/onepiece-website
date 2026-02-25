@@ -15,6 +15,7 @@ export interface NavbarLink {
 }
 
 export interface HeroContent {
+  id: string;
   title: string;
   paragraphs: string[];
   subtitle?: string;

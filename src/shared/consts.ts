@@ -28,8 +28,9 @@ export const NAVBAR_LINKS: NavbarLink[] = [
 ];
 
 /** This will be moved to its corresponding feature folder later */
-export const HERO_CONTENT: HeroContent[] = [
+export const HERO_LIST: HeroContent[] = [
   {
+    id: "homepage",
     title: "Welcome to One Piece",
     paragraphs: [
       "Here you can find all the episodes and a little something extra. Stick around, it'll be fun, trust me.",
@@ -39,6 +40,7 @@ export const HERO_CONTENT: HeroContent[] = [
     subtitle: "Pick your favorite:",
   },
   {
+    id: "episodes",
     title: "One Piece Episodes",
     paragraphs: [
       "From the East Blue to the latest battles, here is the complete journey of the Mugiwara crew. Get some popcorn because we have over a thousand episodes to go through, and remember, skipping Skypiea is a crime in this house.",
@@ -46,12 +48,14 @@ export const HERO_CONTENT: HeroContent[] = [
     subtitle: "Pick a saga:",
   },
   {
+    id: "crew",
     title: "Mugiwara Crew",
     paragraphs: [
       "Warning: prolonged exposure to this crew may cause emotional attachment and a sudden urge to yell “nakama.”",
     ],
   },
   {
+    id: "fruits",
     title: "One Piece Fruits",
     paragraphs: [
       "Careful! They taste like garbage, but they grant you incredible powers (at the low, low price of never swimming again). Here are some of the most iconic fruits we've found so far, and no, you can't eat them through the screen.",
