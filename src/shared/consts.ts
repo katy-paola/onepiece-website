@@ -1,10 +1,6 @@
-import type {
-  HeroContentProps,
-  NavbarLinkProps,
-  SvgAttributesProps,
-} from "./types";
+import type { HeroContent, NavbarLink, SvgAttributes } from "./types";
 
-export const SVG_ATTRIBUTES: SvgAttributesProps = {
+export const SVG_ATTRIBUTES: SvgAttributes = {
   size: "size-4",
   color: "currentColor",
   strokeWidth: 1.5,
@@ -12,7 +8,7 @@ export const SVG_ATTRIBUTES: SvgAttributesProps = {
   strokeLinejoin: "round",
 };
 
-export const NAVBAR_LINKS: NavbarLinkProps[] = [
+export const NAVBAR_LINKS: NavbarLink[] = [
   {
     label: "Home",
     href: "/",
@@ -32,7 +28,7 @@ export const NAVBAR_LINKS: NavbarLinkProps[] = [
 ];
 
 /** This will be moved to its corresponding feature folder later */
-export const HERO_CONTENT: HeroContentProps[] = [
+export const HERO_CONTENT: HeroContent[] = [
   {
     title: "Welcome to One Piece",
     paragraphs: [

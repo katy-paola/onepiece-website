@@ -1,7 +1,7 @@
 export interface IconProps {
   className?: string;
 }
-export interface SvgAttributesProps {
+export interface SvgAttributes {
   size: string;
   color: string;
   strokeWidth: number;
@@ -9,12 +9,12 @@ export interface SvgAttributesProps {
   strokeLinejoin: "round" | "inherit" | "miter" | "bevel" | undefined;
 }
 
-export interface NavbarLinkProps {
+export interface NavbarLink {
   label: string;
   href: string;
 }
 
-export interface HeroContentProps {
+export interface HeroContent {
   title: string;
   paragraphs: string[];
   subtitle?: string;
