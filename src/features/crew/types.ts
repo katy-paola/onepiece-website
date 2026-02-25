@@ -1,4 +1,4 @@
-export interface CharacterCard {
+export interface Character {
   id: string;
   srcImg: string;
   name: string;

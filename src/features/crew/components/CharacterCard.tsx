@@ -1,8 +1,7 @@
-import type { CharacterCard } from "../types";
-import CharacterDetails from "./CharacterDetails";
+import type { Character } from "../types";
 
 interface CharacterCardProps {
-  data: CharacterCard;
+  data: Character;
 }
 
 export default function CharacterCard({ data }: CharacterCardProps) {
@@ -19,15 +18,6 @@ export default function CharacterCard({ data }: CharacterCardProps) {
           <p>{data.bounty}</p>
         </section>
       </article>
-      {data.id === "zoro" ? (
-        <section>
-          <CharacterDetails data={data} />
-        </section>
-      ) : (
-        <dialog>
-          <CharacterDetails data={data} />
-        </dialog>
-      )}
     </>
   );
 }

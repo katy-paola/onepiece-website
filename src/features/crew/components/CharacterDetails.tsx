@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import type { CharacterCard } from "../types";
+import type { Character } from "../types";
 import ArrowLeftIcon from "../../../shared/icons/ArrowLeftIcon";
 import CancelIcon from "../../../shared/icons/CancelIcon";
 import CakeIcon from "../../../shared/icons/CakeIcon";
 
 interface CharacterDetailsProps {
-  data: CharacterCard;
+  data: Character;
 }
 export default function CharacterDetails({ data }: CharacterDetailsProps) {
   return (
