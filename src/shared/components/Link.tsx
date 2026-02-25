@@ -7,7 +7,7 @@ interface LinkElementProps extends ComponentPropsWithoutRef<"a"> {
   size?: "default" | "small";
   hierarchy?: "primary" | "secondary";
   variant?: "default" | "icon";
-  href: "string";
+  href: string;
 }
 
 export default function LinkElement(props: LinkElementProps) {
