@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CHARACTERS } from "../consts";
 import CharacterCard from "./CharacterCard";
 
@@ -7,9 +8,9 @@ export default function CharactersList() {
       {CHARACTERS.map((character, index) => (
         <li key={index}>
           {character.id === "zoro" ? (
-            <a href="/lost/zoro">
+            <Link to="/lost/zoro">
               <CharacterCard data={character} />
-            </a>
+            </Link>
           ) : (
             <button>
               <CharacterCard data={character} />
