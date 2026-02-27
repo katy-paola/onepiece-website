@@ -1,8 +1,20 @@
-import type { CharacterCard } from "./types";
+import type { Character } from "./types";
 
 const IMG_BASE_URL = "/posters/";
 
-export const CHARACTERS: CharacterCard[] = [
+export const EMPTY_CHARACTER = {
+  id: "",
+  srcImg: "",
+  name: "",
+  bounty: "",
+  job: "",
+  birthday: "",
+  age: 0,
+  size: 0,
+  description: [],
+};
+
+export const CHARACTERS: Character[] = [
   {
     id: "luffy",
     srcImg: `${IMG_BASE_URL}luffy.png`,
