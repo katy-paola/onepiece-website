@@ -7,7 +7,7 @@ export default function HomepageMain() {
     <>
       <Hero currentHero="homepage" />
       <ThemeList />
-      <LinkElement href="/episodes" />
+      <LinkElement href="/episodes">Get Started</LinkElement>
     </>
   );
 }
