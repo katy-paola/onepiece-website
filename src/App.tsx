@@ -1,22 +1,23 @@
 import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import SagasPage from "./pages/episodes/SagasPage";
-import EpisodesPerSagaPage from "./pages/episodes/EpisodesPerSagaPage";
-import FruitsPage from "./pages/FruitsPage";
-import MainLayout from "./layouts/MainLayout";
-import CrewPage from "./pages/CrewPage";
-import ZoroPage from "./pages/ZoroPage";
+import MainLayout from "./shared/layouts/MainLayout";
+import HomepageMain from "./features/homepage/ui/HomepageMain";
+import SagasMain from "./features/episodes/ui/SagasMain";
+import EpisodesMain from "./features/episodes/ui/EpisodesMain";
+import CrewMain from "./features/crew/ui/CrewMain";
+import ZoroMain from "./features/crew/ui/ZoroMain";
+import FruitsMain from "./features/fruits/ui/FruitsMain";
+
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/episodes" element={<SagasPage />} />
-        <Route path="/episodes/:sagaId" element={<EpisodesPerSagaPage />} />
-        <Route path="/crew" element={<CrewPage />} />
-        <Route path="/lost/zoro" element={<ZoroPage />} />
-        <Route path="/fruits" element={<FruitsPage />} />
+        <Route index element={<HomepageMain />} />
+        <Route path="/episodes" element={<SagasMain />} />
+        <Route path="/episodes/:sagaId" element={<EpisodesMain />} />
+        <Route path="/crew" element={<CrewMain />} />
+        <Route path="/lost/zoro" element={<ZoroMain />} />
+        <Route path="/fruits" element={<FruitsMain />} />
       </Route>
     </Routes>
   );

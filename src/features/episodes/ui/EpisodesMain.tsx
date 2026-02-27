@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { SAGAS } from "../consts";
 import ArrowLeftIcon from "../../../shared/icons/ArrowLeftIcon";
 import Filter from "../../../shared/ui/Filter";
@@ -7,13 +7,11 @@ import Button from "../../../shared/components/Button";
 import SecMenuIcon from "../../../shared/icons/SecMenuIcon";
 import Sidebar from "../components/Sidebar";
 
-interface EpisodesMainProps {
-  sagaId: number;
-}
 const MOCK_ARCS: ArcLink[] = [];
 const MOCK_EPISODES: Episode[] = [];
-export default function EpisodesMain({ sagaId }: EpisodesMainProps) {
-  const currentSaga = SAGAS.find((saga) => saga.id === sagaId) ?? {
+export default function EpisodesMain() {
+  const { sagaId } = useParams();
+  const currentSaga = SAGAS.find((saga) => saga.id === Number(sagaId)) ?? {
     id: 0,
     title: "",
     href: "#",
