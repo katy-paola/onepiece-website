@@ -1,7 +1,7 @@
 import { HERO_LIST } from "../consts";
 
 interface HeroProps {
-  currentHero: string;
+  currentHero: "homepage" | "episodes" | "crew" | "fruits";
 }
 
 export default function Hero({ currentHero }: HeroProps) {
