@@ -7,12 +7,12 @@ import Button from "../../../shared/components/Button";
 import SecMenuIcon from "../../../shared/icons/SecMenuIcon";
 import Sidebar from "../components/Sidebar";
 
-interface EpisodesContainerProps {
+interface EpisodesMainProps {
   sagaId: number;
 }
 const MOCK_ARCS: ArcLink[] = [];
 const MOCK_EPISODES: Episode[] = [];
-export default function EpisodesContainer({ sagaId }: EpisodesContainerProps) {
+export default function EpisodesMain({ sagaId }: EpisodesMainProps) {
   const currentSaga = SAGAS.find((saga) => saga.id === sagaId) ?? {
     id: 0,
     title: "",

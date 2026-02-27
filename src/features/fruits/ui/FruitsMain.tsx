@@ -5,7 +5,7 @@ import type { Fruit } from "../types";
 
 const MOCK_FRUITS: Fruit[] = [];
 
-export default function MainContainer() {
+export default function FruitsMain() {
   return (
     <>
       <Hero currentHero="fruits" />

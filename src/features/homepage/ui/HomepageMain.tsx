@@ -2,7 +2,7 @@ import LinkElement from "../../../shared/components/Link";
 import Hero from "../../../shared/ui/Hero";
 import ThemeList from "../components/ThemeList";
 
-export default function MainContainer() {
+export default function HomepageMain() {
   return (
     <>
       <Hero currentHero="homepage" />
