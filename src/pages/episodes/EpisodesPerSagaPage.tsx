@@ -5,6 +5,7 @@ import type { VirtuosoHandle } from "react-virtuoso";
 import { useGetEpisodes } from "../../hooks/useGetEpisodes";
 import Filter from "../../components/Filter";
 import { useFilter } from "../../hooks/shared/useFilter";
+import { useGetVirtuosoOptions } from "../../features/episodes/hooks/useGetVirtuosoOptions";
 
 export default function EpisodesPerSagaPage() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function EpisodesPerSagaPage() {
   }, [episodes]);
 
   // Agrupar para EpisodesList
-  const { groupCounts, groupTitles, arcLinks } = useMemo(() => {
+  /* const { groupCounts, groupTitles, arcLinks } = useMemo(() => {
     const counts: number[] = [];
     const titles: string[] = [];
     const links: { title: string; index: number }[] = [];
@@ -70,7 +71,10 @@ export default function EpisodesPerSagaPage() {
     counts.push(currentCount);
 
     return { groupCounts: counts, groupTitles: titles, arcLinks: links };
-  }, [filteredEpisodes]);
+  }, [filteredEpisodes]); */
+
+  const { groupCounts, groupTitles, arcLinks } =
+    useGetVirtuosoOptions(filteredEpisodes);
 
   const scrollToArc = (index: number) => {
     virtuosoRef.current?.scrollToIndex({
@@ -95,7 +99,7 @@ export default function EpisodesPerSagaPage() {
             <li key={`arc-${i}`}>
               <button
                 className="text-start"
-                onClick={() => scrollToArc(arc.index)}
+                onClick={() => scrollToArc(arc.arcIndex)}
               >
                 {arc.title}
               </button>
