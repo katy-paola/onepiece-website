@@ -2,13 +2,13 @@ import { Link, useParams } from "react-router-dom";
 import { SAGAS } from "../consts";
 import ArrowLeftIcon from "../../../shared/icons/ArrowLeftIcon";
 import Filter from "../../../shared/ui/Filter";
-import type { ArcLink } from "../types";
 import Button from "../../../shared/components/Button";
 import SecMenuIcon from "../../../shared/icons/SecMenuIcon";
 import Sidebar from "../components/Sidebar";
 import { useGetEpisodes } from "../hooks/useGetEpisodes";
+import EpisodesList from "../components/EpisodesList";
+import { useGetVirtuosoOptions } from "../hooks/useGetVirtuosoOptions";
 
-const MOCK_ARCS: ArcLink[] = [];
 export default function EpisodesMain() {
   const { sagaId } = useParams();
   const currentSaga = SAGAS.find((saga) => saga.id === Number(sagaId)) ?? {
@@ -21,6 +21,9 @@ export default function EpisodesMain() {
     Number(sagaId),
   );
 
+  const { groupCounts, groupTitles, arcLinks } =
+    useGetVirtuosoOptions(episodes);
+
   return (
     <>
       <header>
@@ -32,25 +35,23 @@ export default function EpisodesMain() {
       <Filter
         data={{
           placeholder: "Search episodes...",
-          categories: MOCK_ARCS.map((arc) => arc.title),
+          categories: arcLinks.map((arc) => arc.title),
         }}
       />
       <section>
+        <Sidebar arcLinks={arcLinks} />
         <small>Showing 0 of 0 episodes</small>
-        <p>Arc Romance Dawn</p>
-        <ul>
-          {isLoadingEpisodes && <p>Loading...</p>}
-          {episodes.slice(0, 10).map((episode, index) => (
-            <li key={index}>
-              {episode.id}. {episode.title}
-            </li>
-          ))}
-        </ul>
+
+        {isLoadingEpisodes && <p>Loading...</p>}
+        <EpisodesList
+          episodes={episodes}
+          groupCounts={groupCounts}
+          groupTitles={groupTitles}
+        />
         <Button>
           Arc Romance Dawn
           <SecMenuIcon />
         </Button>
-        <Sidebar />
       </section>
     </>
   );
