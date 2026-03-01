@@ -8,6 +8,9 @@ import Sidebar from "../components/Sidebar";
 import { useGetEpisodes } from "../hooks/useGetEpisodes";
 import EpisodesList from "../components/EpisodesList";
 import { useGetVirtuosoOptions } from "../hooks/useGetVirtuosoOptions";
+import { scrollToArc } from "../helpers/scrollToArc";
+import type { VirtuosoHandle } from "react-virtuoso";
+import { useRef } from "react";
 
 export default function EpisodesMain() {
   const { sagaId } = useParams();
@@ -21,8 +24,14 @@ export default function EpisodesMain() {
     Number(sagaId),
   );
 
+  const virtuosoRef = useRef<VirtuosoHandle>(null);
+
   const { groupCounts, groupTitles, arcLinks } =
     useGetVirtuosoOptions(episodes);
+
+  const handleSidebarClick = (arcIndex: number) => {
+    scrollToArc(arcIndex, virtuosoRef);
+  };
 
   return (
     <>
@@ -39,7 +48,7 @@ export default function EpisodesMain() {
         }}
       />
       <section>
-        <Sidebar arcLinks={arcLinks} />
+        <Sidebar arcLinks={arcLinks} handleClick={handleSidebarClick} />
         <small>Showing 0 of 0 episodes</small>
 
         {isLoadingEpisodes && <p>Loading...</p>}
@@ -47,6 +56,7 @@ export default function EpisodesMain() {
           episodes={episodes}
           groupCounts={groupCounts}
           groupTitles={groupTitles}
+          ref={virtuosoRef}
         />
         <Button>
           Arc Romance Dawn

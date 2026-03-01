@@ -3,14 +3,17 @@ import type { ArcLink } from "../types";
 
 interface SidebarProps {
   arcLinks: ArcLink[];
+  handleClick: (index: number) => void;
 }
-export default function Sidebar({ arcLinks }: SidebarProps) {
+export default function Sidebar({ arcLinks, handleClick }: SidebarProps) {
   return (
     <aside>
       <ul>
         {arcLinks.map((arc, index) => (
           <li key={index}>
-            <button>{arc.title}</button>
+            <button onClick={() => handleClick(arc.arcIndex)}>
+              {arc.title}
+            </button>
           </li>
         ))}
       </ul>
