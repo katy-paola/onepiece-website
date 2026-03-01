@@ -13,8 +13,8 @@ export default function Filter({ data }: FilterProps) {
     <section>
       <Searchbar placeholder={data.placeholder} />
       <div>
-        {data.categories.map((category) => (
-          <Checkbox label={category} />
+        {data.categories.map((category, index) => (
+          <Checkbox key={index} label={category} />
         ))}
       </div>
       <button>Clear filters</button>
