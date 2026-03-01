@@ -2,11 +2,11 @@ import { GroupedVirtuoso, type VirtuosoHandle } from "react-virtuoso";
 import type { Episode } from "../types";
 import { forwardRef } from "react";
 
-type EpisodesListProps = {
+interface EpisodesListProps {
   episodes: Episode[];
   groupCounts: number[];
   groupTitles: string[];
-};
+}
 
 const EpisodesList = forwardRef<VirtuosoHandle, EpisodesListProps>(
   function EpisodesList({ episodes, groupCounts, groupTitles }, ref) {
