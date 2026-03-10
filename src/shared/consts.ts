@@ -27,7 +27,6 @@ export const NAVBAR_LINKS: NavbarLink[] = [
   },
 ];
 
-/** This will be moved to its corresponding feature folder later */
 export const HERO_LIST: HeroContent[] = [
   {
     id: "homepage",
