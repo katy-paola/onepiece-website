@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "One Piece";
+  src: url("fonts/one-piece-font/OnePiece-zAqL.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Grandstander";
+  src: url("/fonts/grandstander/grandstander-variable.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .bg-gradient-action {
+    background: linear-gradient(
+      45deg,
+      var(--main-button-1) 0%,
+      var(--main-button-2) 100%
+    );
+  }
+  .shadow-action {
+    box-shadow: 2px 2px 0 var(--color-action-text);
+    transition: all 0.3s ease;
+  }
+  .shadow-action:hover {
+    box-shadow: 1px 1px 0 var(--color-action-text);
+  }
+}
+
+:root {
+  font-family: "Grandstander";
+  line-height: 1.5;
+  font-weight: 400;
+
+  --font-onepiece: "One Piece";
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --luffy: #f32c23;
+  --zoro: #417357;
+  --usopp: #db7627;
+  --sanji: #9e801d;
+  --nami: #e54c07;
+  --chopper: #ca5952;
+  --robin: #464478;
+  --franky: #155a8e;
+  --brook: #6d6f5e;
+  --jinbe: #5696cc;
+  --main-button-1: #d0a15f;
+  --main-button-2: #ecc37e;
+}
+
+@theme {
+  --color-bg: #f0f0f0;
+  --color-text: #1e1e1e;
+  --color-stroke: #4a372b4d;
+  --color-action-text: #4a372b;
+  --color-sec-button: #f8eedc;
+  --color-luffy: var(--luffy);
+  --color-zoro: var(--zoro);
+  --color-usopp: var(--usopp);
+  --color-sanji: var(--sanji);
+  --color-nami: var(--nami);
+  --color-chopper: var(--chopper);
+  --color-robin: var(--robin);
+  --color-franky: var(--franky);
+  --color-brook: var(--brook);
+  --color-jinbe: var(--jinbe);
+}
+
+body {
+  padding: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
