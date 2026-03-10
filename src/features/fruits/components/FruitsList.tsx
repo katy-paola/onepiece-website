@@ -1,12 +1,11 @@
 import type { Fruit } from "../types";
 
-const MOCK_FRUITS: Fruit[] = [];
-export default function FruitsList() {
+export default function FruitsList({ fruits }: { fruits: Fruit[] }) {
   return (
     <ul>
       {
         /** Here we will put all the fruits from api */
-        MOCK_FRUITS.map((fruit, index) => (
+        fruits.map((fruit, index) => (
           <li key={index}>
             <button>
               <img
