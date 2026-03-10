@@ -9,8 +9,9 @@ import { useGetEpisodes } from "../hooks/useGetEpisodes";
 import EpisodesList from "../components/EpisodesList";
 import { useGetVirtuosoOptions } from "../hooks/useGetVirtuosoOptions";
 import { scrollToArc } from "../helpers/scrollToArc";
-import type { VirtuosoHandle } from "react-virtuoso";
-import { useRef } from "react";
+import type { GroupedVirtuosoHandle } from "react-virtuoso";
+import { useMemo, useRef } from "react";
+import { useFilter } from "../../../shared/hooks/useFilter";
 
 export default function EpisodesMain() {
   const { sagaId } = useParams();
@@ -24,13 +25,32 @@ export default function EpisodesMain() {
     Number(sagaId),
   );
 
-  const virtuosoRef = useRef<VirtuosoHandle>(null);
+  const {
+    query,
+    setQuery,
+    selectedIds,
+    setSelectedIds,
+    filteredData: filteredEpisodes,
+  } = useFilter({
+    data: episodes,
+    getItemSearchText: (episode) => episode.title,
+    getItemFilterId: (episode) => episode.arc.id,
+  });
+
+  const filterCategories = useMemo(() => {
+    return Array.from(new Set(episodes.map((e) => e.arc.id))).map((arcId) => ({
+      id: arcId,
+      label: episodes.find((e) => e.arc.id === arcId)?.arc.title || "",
+    }));
+  }, [episodes]);
+
+  const virtuosoRef = useRef<GroupedVirtuosoHandle>(null);
 
   const { groupCounts, groupTitles, arcLinks } =
-    useGetVirtuosoOptions(episodes);
+    useGetVirtuosoOptions(filteredEpisodes);
 
-  const handleSidebarClick = (arcIndex: number) => {
-    scrollToArc(arcIndex, virtuosoRef);
+  const handleSidebarClick = (groupIndex: number) => {
+    scrollToArc(groupIndex, groupCounts, virtuosoRef);
   };
 
   return (
@@ -43,8 +63,12 @@ export default function EpisodesMain() {
       </header>
       <Filter
         data={{
-          placeholder: "Search episodes...",
-          categories: arcLinks.map((arc) => arc.title),
+          categories: filterCategories,
+          selectedIds: selectedIds,
+          onSelectedIdsChange: setSelectedIds,
+          query: query,
+          onQueryChange: setQuery,
+          placeholder: "Search episode...",
         }}
       />
       <section>
@@ -52,8 +76,9 @@ export default function EpisodesMain() {
         <small>Showing 0 of 0 episodes</small>
 
         {isLoadingEpisodes && <p>Loading...</p>}
+
         <EpisodesList
-          episodes={episodes}
+          episodes={filteredEpisodes}
           groupCounts={groupCounts}
           groupTitles={groupTitles}
           ref={virtuosoRef}

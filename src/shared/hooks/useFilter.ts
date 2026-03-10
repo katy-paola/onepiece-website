@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { normalizeQuery } from "../helpers/normalizeQuery";
+import { useDebouncedQuery } from "../../hooks/shared/useDebouncedQuery";
 
 interface UseFilterOptions<T> {
   data: T[];
@@ -15,11 +16,14 @@ export function useFilter<T>({
   const [query, setQuery] = useState("");
   const [selectedIds, setSelectedIds] = useState<number[]>([]);
 
+  const debouncedQuery = useDebouncedQuery(query);
+
   const filteredData = useMemo(() => {
+    const normalizedQuery = normalizeQuery(debouncedQuery);
+
     let result = data;
 
-    if (query) {
-      const normalizedQuery = normalizeQuery(query);
+    if (normalizedQuery.length > 0) {
       result = result.filter((item) =>
         normalizeQuery(getItemSearchText(item)).includes(normalizedQuery),
       );
@@ -32,7 +36,7 @@ export function useFilter<T>({
     }
 
     return result;
-  }, [data, query, selectedIds, getItemSearchText, getItemFilterId]);
+  }, [data, debouncedQuery, selectedIds, getItemSearchText, getItemFilterId]);
 
   return {
     query,

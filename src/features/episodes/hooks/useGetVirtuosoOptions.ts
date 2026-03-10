@@ -6,12 +6,11 @@ export function useGetVirtuosoOptions(filteredEpisodes: Episode[]) {
     const counts: number[] = [];
     const titles: string[] = [];
     const links: ArcLink[] = [];
-
     if (filteredEpisodes.length === 0) {
       return { groupCounts: [], groupTitles: [], arcLinks: [] };
     }
 
-    let currentCount = 0;
+    let episodesPerArc = 0;
 
     filteredEpisodes.forEach((episode, index) => {
       const currentArcId = episode.arc.id;
@@ -19,22 +18,22 @@ export function useGetVirtuosoOptions(filteredEpisodes: Episode[]) {
 
       if (index === 0 || currentArcId !== previousArcId) {
         if (index !== 0) {
-          counts.push(currentCount);
+          counts.push(episodesPerArc);
         }
 
-        currentCount = 1;
+        episodesPerArc = 1;
         titles.push(episode.arc.title);
 
         links.push({
           title: episode.arc.title,
-          arcIndex: index,
+          arcIndex: titles.length - 1,
         });
       } else {
-        currentCount++;
+        episodesPerArc++;
       }
     });
 
-    counts.push(currentCount);
+    counts.push(episodesPerArc);
 
     return { groupCounts: counts, groupTitles: titles, arcLinks: links };
   }, [filteredEpisodes]);

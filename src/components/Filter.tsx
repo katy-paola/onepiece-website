@@ -1,26 +1,21 @@
 interface FilterProps {
-  filterOptions: { id: number; label: string }[];
-  selectedIds: number[];
-  onSelectedIdsChange: (ids: number[]) => void;
-  query: string;
-  onQueryChange: (value: string) => void;
-  placeholder?: string;
+  data: {
+    categories: { id: number; label: string }[];
+    selectedIds: number[];
+    onSelectedIdsChange: (ids: number[]) => void;
+    query: string;
+    onQueryChange: (value: string) => void;
+    placeholder?: string;
+  };
 }
 
-export default function Filter({
-  filterOptions,
-  selectedIds,
-  onSelectedIdsChange,
-  query,
-  onQueryChange,
-  placeholder = "Search...",
-}: FilterProps) {
+export default function Filter({ data }: FilterProps) {
   const toggleId = (id: number, checked: boolean) => {
-    onQueryChange("");
-    onSelectedIdsChange(
+    data.onQueryChange("");
+    data.onSelectedIdsChange(
       checked
-        ? [...selectedIds, id]
-        : selectedIds.filter((selectedId) => selectedId !== id),
+        ? [...data.selectedIds, id]
+        : data.selectedIds.filter((selectedId) => selectedId !== id),
     );
   };
 
@@ -29,18 +24,18 @@ export default function Filter({
       {/* Input de búsqueda */}
       <input
         type="search"
-        placeholder={placeholder}
-        value={query}
-        onChange={(e) => onQueryChange(e.target.value)}
+        placeholder={data.placeholder}
+        value={data.query}
+        onChange={(e) => data.onQueryChange(e.target.value)}
       />
 
       {/* Filtro por opciones */}
       <div className="flex gap-2 flex-wrap">
-        {filterOptions.map((option) => (
+        {data.categories.map((option) => (
           <label key={option.id} className="flex items-center gap-1">
             <input
               type="checkbox"
-              checked={selectedIds.includes(option.id)}
+              checked={data.selectedIds.includes(option.id)}
               onChange={(e) => toggleId(option.id, e.target.checked)}
             />
             {option.label}
@@ -51,8 +46,8 @@ export default function Filter({
       {/* Botón para limpiar filtros */}
       <button
         onClick={() => {
-          onQueryChange("");
-          onSelectedIdsChange([]);
+          data.onQueryChange("");
+          data.onSelectedIdsChange([]);
         }}
       >
         Clear Filters

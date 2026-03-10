@@ -1,11 +1,16 @@
-import type { VirtuosoHandle } from "react-virtuoso";
+import type { GroupedVirtuosoHandle } from "react-virtuoso";
 
 export const scrollToArc = (
-  index: number,
-  virtuosoRef: React.RefObject<VirtuosoHandle | null>,
+  arcIndex: number,
+  groupCounts: number[],
+  ref: React.RefObject<GroupedVirtuosoHandle | null>,
 ) => {
-  virtuosoRef.current?.scrollToIndex({
-    index,
+  const flatIndex = groupCounts
+    .slice(0, arcIndex)
+    .reduce((sum, count) => sum + count, 0);
+
+  ref.current?.scrollToIndex({
+    index: flatIndex,
     align: "start",
     behavior: "smooth",
   });

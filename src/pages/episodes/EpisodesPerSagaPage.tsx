@@ -139,12 +139,14 @@ export default function EpisodesPerSagaPage() {
         {}
 
         <Filter
-          filterOptions={filterOptions}
-          selectedIds={selectedIds}
-          onSelectedIdsChange={setSelectedIds}
-          query={query}
-          onQueryChange={setQuery}
-          placeholder="Search episodes..."
+          data={{
+            categories: filterOptions,
+            selectedIds: selectedIds,
+            onSelectedIdsChange: setSelectedIds,
+            query: query,
+            onQueryChange: setQuery,
+            placeholder: "Search episodes...",
+          }}
         />
       </section>
     </section>

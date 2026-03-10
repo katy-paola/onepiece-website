@@ -1,4 +1,4 @@
-import { GroupedVirtuoso, type VirtuosoHandle } from "react-virtuoso";
+import { GroupedVirtuoso, type GroupedVirtuosoHandle } from "react-virtuoso";
 import type { Episode } from "../types";
 import { forwardRef } from "react";
 
@@ -8,19 +8,21 @@ interface EpisodesListProps {
   groupTitles: string[];
 }
 
-const EpisodesList = forwardRef<VirtuosoHandle, EpisodesListProps>(
+const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
   function EpisodesList({ episodes, groupCounts, groupTitles }, ref) {
     return (
       <GroupedVirtuoso
         ref={ref}
-        style={{ height: "100vh" }}
+        style={{ height: "70vh" }}
         groupCounts={groupCounts}
-        groupContent={(index) => <div>{groupTitles[index]}</div>}
+        groupContent={(index) => (
+          <div className="bg-amber-50">{groupTitles[index]}</div>
+        )}
         itemContent={(index) => {
           const episode = episodes[index];
           return (
-            <p key={episode.id}>
-              {episode.id}. {episode.title} - {episode.arc.title}
+            <p>
+              {episode?.id}. {episode?.title}
             </p>
           );
         }}
