@@ -65,7 +65,7 @@ body,
   --jinbe: #5696cc;
   --main-button-1: #d0a15f;
   --main-button-2: #ecc37e;
-  --light-orange: #ffe7bb;
+  --light-orange: #fff2da;
   --white: #f0f0f0;
   --brown: #4a372b;
 }
@@ -87,10 +87,6 @@ body,
   --color-franky: var(--franky);
   --color-brook: var(--brook);
   --color-jinbe: var(--jinbe);
-}
-
-body {
-  padding: 1rem;
 }
 
 button {
