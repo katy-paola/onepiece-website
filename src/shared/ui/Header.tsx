@@ -19,8 +19,8 @@ export default function Header() {
       </Link>
       <nav
         className={cn(
-          "flex justify-between items-start p-4 absolute top-0 z-10 bg-radial w-full left-full transition-transform duration-300",
-          isOpen && "-translate-x-full",
+          "flex justify-between items-start p-4 fixed top-0 right-0 translate-x-full z-10 bg-radial w-full transition-transform duration-300",
+          isOpen && "translate-x-0",
         )}
       >
         <ul className="flex-1">
