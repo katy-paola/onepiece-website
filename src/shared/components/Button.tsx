@@ -6,8 +6,11 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   size?: "default" | "small";
   hierarchy?: "primary" | "secondary";
   variant?: "default" | "icon";
+  className?: string;
 }
 
-export default function Button(props: ButtonProps) {
-  return <button className={cn(actionStyles(props))} {...props} />;
+export default function Button({ className, ...props }: ButtonProps) {
+  return (
+    <button {...props} className={cn(actionStyles({ ...props }), className)} />
+  );
 }
