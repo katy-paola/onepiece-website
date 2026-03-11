@@ -21,6 +21,9 @@ body,
 }
 
 @layer utilities {
+  .bg-radial {
+    background: radial-gradient(var(--white), var(--light-orange));
+  }
   .bg-gradient-action {
     background: linear-gradient(
       45deg,
@@ -62,14 +65,18 @@ body,
   --jinbe: #5696cc;
   --main-button-1: #d0a15f;
   --main-button-2: #ecc37e;
+  --light-orange: #ffe7bb;
+  --white: #f0f0f0;
+  --brown: #4a372b;
 }
 
 @theme {
-  --color-bg: #f0f0f0;
+  --color-bg: var(--white);
   --color-text: #1e1e1e;
-  --color-stroke: #4a372b4d;
-  --color-action-text: #4a372b;
-  --color-sec-button: #f8eedc;
+  --color-stroke: var(--brown);
+  --color-action-text: var(--brown);
+  --color-sec-button: var(--light-orange);
+  --color-checkbox: var(--light-orange);
   --color-luffy: var(--luffy);
   --color-zoro: var(--zoro);
   --color-usopp: var(--usopp);
