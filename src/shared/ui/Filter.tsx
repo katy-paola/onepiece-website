@@ -27,7 +27,7 @@ export default function Filter({ data }: FilterProps) {
         placeholder={data.placeholder}
         inputAttributes={{ value: data.query, onChange: data.onQueryChange }}
       />
-      <div>
+      <div className="flex flex-wrap">
         {data.categories.map((category) => (
           <Checkbox
             key={category.id}
