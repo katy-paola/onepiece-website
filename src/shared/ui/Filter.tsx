@@ -22,12 +22,13 @@ export default function Filter({ data }: FilterProps) {
     );
   };
   return (
-    <section>
+    <section className="flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 xl:flex">
       <Searchbar
+        className="md:col-span-2"
         placeholder={data.placeholder}
         inputAttributes={{ value: data.query, onChange: data.onQueryChange }}
       />
-      <div className="flex flex-wrap">
+      <div className="flex gap-2 w-full overflow-x-auto xl:flex-col">
         {data.categories.map((category) => (
           <Checkbox
             key={category.id}
@@ -40,6 +41,7 @@ export default function Filter({ data }: FilterProps) {
         ))}
       </div>
       <button
+        className="underline hover:no-underline w-max"
         onClick={() => {
           data.onQueryChange("");
           data.onSelectedIdsChange([]);

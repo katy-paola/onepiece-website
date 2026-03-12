@@ -1,3 +1,4 @@
+import { cn } from "../lib/utils";
 import Input from "./Input";
 
 interface CheckboxProps {
@@ -6,18 +7,28 @@ interface CheckboxProps {
     checked: boolean;
     onChange: (value: boolean) => void;
   };
+  className?: string;
 }
 
-export default function Checkbox({ label, inputAttributes }: CheckboxProps) {
+export default function Checkbox({
+  label,
+  inputAttributes,
+  className,
+}: CheckboxProps) {
   return (
-    <label className="flex gap-2 px-4 py-3 border border-stroke text-action-text has-checked:bg-checkbox">
+    <label
+      className={cn(
+        "flex gap-2 px-4 py-3 border border-stroke text-action-text has-checked:bg-checkbox",
+        className,
+      )}
+    >
       <Input
         className="accent-stroke"
         type="checkbox"
         checked={inputAttributes.checked}
         onChange={(e) => inputAttributes.onChange(e.target.checked)}
       />
-      {label}
+      <span className="w-max">{label}</span>
     </label>
   );
 }
