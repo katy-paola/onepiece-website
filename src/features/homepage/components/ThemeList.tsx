@@ -4,8 +4,8 @@ import { THEME_CARDS } from "../consts";
 export default function ThemeList() {
   return (
     <ul className="grid grid-cols-2 gap-4 md:grid-cols-5">
-      {THEME_CARDS.map((card) => (
-        <div>
+      {THEME_CARDS.map((card, index) => (
+        <div key={index}>
           <a
             data-tooltip-id={`${card.label.toLowerCase()}-tooltip-id`}
             data-tooltip-content={card.tooltip.message}
