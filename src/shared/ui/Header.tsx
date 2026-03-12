@@ -8,8 +8,9 @@ import { cn } from "../lib/utils";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>("homepage");
   return (
-    <header className="relative flex justify-between items-center p-4 bg-radial z-10">
+    <header className="fixed top-0 w-full flex justify-between items-center p-4 bg-radial z-10">
       <Link to="/" title="Go to homepage">
         <img
           src="/logos/onepiece-logo.png"
@@ -21,19 +22,27 @@ export default function Header() {
         className={cn(
           "flex justify-between items-start p-4 fixed top-0 right-0 translate-x-full z-10 bg-radial w-full transition-transform duration-300",
           isOpen && "translate-x-0",
+          "md:static md:translate-none md:right-auto md:w-max md:p-0",
         )}
       >
-        <ul className="flex-1">
+        <ul className="flex-1 md:flex">
           {NAVBAR_LINKS.map((link, index) => (
             <li key={index} className="flex" onClick={() => setIsOpen(false)}>
-              <Link className="p-2" to={link.href}>
+              <Link
+                className={cn(
+                  "p-2 hover:underline",
+                  activeTab === link.id && "underline",
+                )}
+                to={link.href}
+                onClick={() => setActiveTab(link.id)}
+              >
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
         <Button
-          className=""
+          className="md:hidden"
           onClick={() => setIsOpen(false)}
           variant="icon"
           hierarchy="secondary"
@@ -42,6 +51,7 @@ export default function Header() {
         </Button>
       </nav>
       <Button
+        className="md:hidden"
         onClick={() => setIsOpen(true)}
         variant="icon"
         hierarchy="secondary"

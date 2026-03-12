@@ -10,18 +10,22 @@ export const SVG_ATTRIBUTES: SvgAttributes = {
 
 export const NAVBAR_LINKS: NavbarLink[] = [
   {
+    id: "homepage",
     label: "Home",
     href: "/",
   },
   {
+    id: "episodes",
     label: "Episodes",
     href: "/episodes",
   },
   {
+    id: "crew",
     label: "Crew",
     href: "/crew",
   },
   {
+    id: "fruits",
     label: "Fruits",
     href: "/fruits",
   },

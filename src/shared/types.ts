@@ -10,6 +10,7 @@ export interface SvgAttributes {
 }
 
 export interface NavbarLink {
+  id: "homepage" | "episodes" | "crew" | "fruits";
   label: string;
   href: string;
 }
