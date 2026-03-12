@@ -38,6 +38,24 @@ body,
   .shadow-action:hover {
     box-shadow: 1px 1px 0 var(--color-action-text);
   }
+  .text-gradient {
+    background: linear-gradient(
+      to right,
+      #f32c23 0%,
+      #417357 11%,
+      #db7627 23%,
+      #9e801d 34%,
+      #e54c07 45%,
+      #ca5952 54%,
+      #464478 65%,
+      #155a8e 76%,
+      #6d6f5e 88%,
+      #5696cc 99%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 :root {
@@ -87,6 +105,8 @@ body,
   --color-franky: var(--franky);
   --color-brook: var(--brook);
   --color-jinbe: var(--jinbe);
+
+  --font-onepiece: var(--font-onepiece);
 }
 
 button {

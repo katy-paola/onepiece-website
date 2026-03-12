@@ -12,17 +12,19 @@ export default function Hero({ currentHero }: HeroProps) {
   };
   return (
     <section>
-      <h1>{hero.title}</h1>
+      <h1 className="text-4xl font-onepiece text-gradient w-max md:text-5xl">
+        {hero.title}
+      </h1>
       {hero.id === "homepage" ? (
         <div>
-          {hero.paragraphs.map((paragraph) => (
-            <p>{paragraph}</p>
+          {hero.paragraphs.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
       ) : (
         <p>{hero.paragraphs[0]}</p>
       )}
-      {hero.subtitle && <p>{hero.subtitle}</p>}
+      {hero.subtitle && <p className="font-semibold">{hero.subtitle}</p>}
     </section>
   );
 }
