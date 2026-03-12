@@ -4,11 +4,16 @@ import ArrowRightIcon from "../../../shared/icons/ArrowRightIcon";
 
 export default function SagasList() {
   return (
-    <ul>
+    <ul className="grid gap-4 md:grid-cols-2">
       {SAGAS.map((saga, index) => (
         <li key={index}>
-          <Link to={saga.href}>{saga.title}</Link>
-          <ArrowRightIcon />
+          <Link
+            to={saga.href}
+            className="flex justify-between items-center px-5 py-4 text-action-text bg-radial border border-stroke/30 shadow-md hover:shadow-none"
+          >
+            {saga.title}
+            <ArrowRightIcon />
+          </Link>
         </li>
       ))}
     </ul>
