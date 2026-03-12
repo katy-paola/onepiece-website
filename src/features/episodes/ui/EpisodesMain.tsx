@@ -10,7 +10,7 @@ import EpisodesList from "../components/EpisodesList";
 import { useGetVirtuosoOptions } from "../hooks/useGetVirtuosoOptions";
 import { scrollToArc } from "../helpers/scrollToArc";
 import type { GroupedVirtuosoHandle } from "react-virtuoso";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFilter } from "../../../shared/hooks/useFilter";
 
 export default function EpisodesMain() {
@@ -20,6 +20,10 @@ export default function EpisodesMain() {
     title: "",
     href: "#",
   };
+
+  const [selectedArcIdToShow, setSelectedArcIdToShow] = useState<number | null>(
+    null,
+  );
 
   const { episodes, isLoading: isLoadingEpisodes } = useGetEpisodes(
     Number(sagaId),
@@ -72,7 +76,14 @@ export default function EpisodesMain() {
         }}
       />
       <section>
-        <Sidebar arcLinks={arcLinks} handleClick={handleSidebarClick} />
+        <Sidebar
+          data={{
+            arcLinks: arcLinks,
+            handleClick: handleSidebarClick,
+            selectedArcIdToShow: selectedArcIdToShow,
+            setSelectedArcIdToShow: setSelectedArcIdToShow,
+          }}
+        />
         <small>Showing 0 of 0 episodes</small>
 
         {isLoadingEpisodes && <p>Loading...</p>}
@@ -82,6 +93,7 @@ export default function EpisodesMain() {
           groupCounts={groupCounts}
           groupTitles={groupTitles}
           ref={virtuosoRef}
+          selectedArcIdToShow={selectedArcIdToShow}
         />
         <Button>
           Arc Romance Dawn

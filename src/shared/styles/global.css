@@ -89,7 +89,7 @@ body,
 }
 
 @theme {
-  --color-bg: var(--white);
+  --color-white: var(--white);
   --color-text: #1e1e1e;
   --color-stroke: var(--brown);
   --color-action-text: var(--brown);
