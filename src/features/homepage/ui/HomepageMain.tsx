@@ -1,6 +1,7 @@
 import LinkElement from "../../../shared/components/Link";
 import Hero from "../../../shared/ui/Hero";
 import ThemeList from "../components/ThemeList";
+import "../styles/homepage.css";
 
 export default function HomepageMain() {
   return (
