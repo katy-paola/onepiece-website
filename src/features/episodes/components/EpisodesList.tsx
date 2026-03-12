@@ -4,34 +4,33 @@ import { forwardRef } from "react";
 import { cn } from "../../../shared/lib/utils";
 
 interface EpisodesListProps {
-  episodes: Episode[];
-  groupCounts: number[];
-  groupTitles: string[];
-  selectedArcIdToShow: number | null;
+  data: {
+    episodes: Episode[];
+    groupCounts: number[];
+    groupTitles: string[];
+    selectedArcIdToShow: number | null;
+  };
 }
 
 const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
-  function EpisodesList(
-    { episodes, groupCounts, groupTitles, selectedArcIdToShow },
-    ref,
-  ) {
+  function EpisodesList({ data }, ref) {
     return (
       <GroupedVirtuoso
         ref={ref}
         style={{ height: "70vh" }}
-        groupCounts={groupCounts}
+        groupCounts={data.groupCounts}
         groupContent={(index) => (
           <div
             className={cn(
               "bg-amber-50 border border-transparent transition-colors",
-              selectedArcIdToShow === index && "border border-stroke",
+              data.selectedArcIdToShow === index && "border border-stroke",
             )}
           >
-            {groupTitles[index]}
+            {data.groupTitles[index]}
           </div>
         )}
         itemContent={(index) => {
-          const episode = episodes[index];
+          const episode = data.episodes[index];
           return (
             <p>
               {episode?.id}. {episode?.title}

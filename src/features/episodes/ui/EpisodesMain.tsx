@@ -89,11 +89,13 @@ export default function EpisodesMain() {
         {isLoadingEpisodes && <p>Loading...</p>}
 
         <EpisodesList
-          episodes={filteredEpisodes}
-          groupCounts={groupCounts}
-          groupTitles={groupTitles}
+          data={{
+            episodes: filteredEpisodes,
+            groupCounts: groupCounts,
+            groupTitles: groupTitles,
+            selectedArcIdToShow: selectedArcIdToShow,
+          }}
           ref={virtuosoRef}
-          selectedArcIdToShow={selectedArcIdToShow}
         />
         <Button>
           Arc Romance Dawn
