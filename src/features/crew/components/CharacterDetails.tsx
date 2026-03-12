@@ -22,7 +22,7 @@ export default function CharacterDetails({ data }: CharacterDetailsProps) {
             </button>
           )}
 
-          <h2>{data.name}</h2>
+          <h2>{data.id === "zoro" ? "Roronoa Zoro" : data.name}</h2>
         </div>
         <small>{data.job}</small>
       </header>
