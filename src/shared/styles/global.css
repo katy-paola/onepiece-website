@@ -107,6 +107,8 @@ body,
   --color-jinbe: var(--jinbe);
 
   --font-onepiece: var(--font-onepiece);
+
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 button {
