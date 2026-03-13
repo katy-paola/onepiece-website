@@ -1,6 +1,10 @@
 import type { Character } from "./types";
 
 const IMG_BASE_URL = "/posters/";
+const ZORO_GALLERY = Array.from(
+  { length: 5 },
+  (_, i) => `/zoro/zoro${i + 1}.png`,
+);
 
 export const EMPTY_CHARACTER = {
   id: "",
@@ -33,6 +37,7 @@ export const CHARACTERS: Character[] = [
     srcImg: `${IMG_BASE_URL}zoro.png`,
     name: "404 - NOT FOUND",
     bounty: "GO FIND HIM",
+    gallery: ZORO_GALLERY,
     job: "Right-hand man",
     birthday: "November 11st",
     age: 21,
