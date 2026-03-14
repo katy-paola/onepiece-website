@@ -6,7 +6,7 @@ export default function ZoroMain() {
     CHARACTERS.find((character) => character.id === "zoro") ?? EMPTY_CHARACTER;
   return (
     <>
-      <CharacterDetails data={character} />
+      <CharacterDetails character={character} />
     </>
   );
 }

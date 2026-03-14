@@ -3,57 +3,68 @@ import type { Character } from "../types";
 import ArrowLeftIcon from "../../../shared/icons/ArrowLeftIcon";
 import CancelIcon from "../../../shared/icons/CancelIcon";
 import CakeIcon from "../../../shared/icons/CakeIcon";
+import type React from "react";
 
 interface CharacterDetailsProps {
-  data: Character;
+  character: Character;
+  setSelectedCharacter?: React.Dispatch<React.SetStateAction<Character | null>>;
 }
-export default function CharacterDetails({ data }: CharacterDetailsProps) {
+export default function CharacterDetails({
+  character,
+  setSelectedCharacter,
+}: CharacterDetailsProps) {
+  const handleCancel = () => {
+    if (setSelectedCharacter) {
+      setSelectedCharacter(null);
+    }
+  };
+
   return (
     <article>
       <header>
         <div>
-          {data.id === "zoro" ? (
+          {character.id === "zoro" ? (
             <Link to="/crew">
               <ArrowLeftIcon />
             </Link>
           ) : (
-            <button>
+            <button onClick={handleCancel}>
               <CancelIcon />
             </button>
           )}
 
-          <h2>{data.id === "zoro" ? "Roronoa Zoro" : data.name}</h2>
+          <h2>{character.id === "zoro" ? "Roronoa Zoro" : character.name}</h2>
         </div>
-        <small>{data.job}</small>
+        <small>{character.job}</small>
       </header>
       <section>
-        {data.id === "zoro" ? (
+        {character.id === "zoro" ? (
           <div>
-            {data.gallery?.map((photo, index) => (
+            {character.gallery?.map((photo, index) => (
               <img src={photo} alt={`Zoro's photo number ${index + 1}`} />
             ))}
           </div>
         ) : (
           <picture>
-            <img src={data.srcImg} alt={`${data.name}'s photo`} />
+            <img src={character.srcImg} alt={`${character.name}'s photo`} />
           </picture>
         )}
         <div>
           <p>
             <CakeIcon />
-            {data.birthday}
+            {character.birthday}
           </p>
-          <p>{data.age}</p>
-          <p>{data.size}</p>
+          <p>{character.age}</p>
+          <p>{character.size}</p>
         </div>
-        {data.id === "zoro" ? (
+        {character.id === "zoro" ? (
           <div>
-            {data.description.map((paragraph) => (
-              <p>{paragraph}</p>
+            {character.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
             ))}
           </div>
         ) : (
-          <p>{data.description[0]}</p>
+          <p>{character.description[0]}</p>
         )}
       </section>
     </article>

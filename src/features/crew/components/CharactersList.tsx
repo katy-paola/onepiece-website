@@ -1,34 +1,56 @@
 import { Link } from "react-router-dom";
 import { CHARACTERS } from "../consts";
 import CharacterCard from "./CharacterCard";
+import { cn } from "../../../shared/lib/utils";
+import CharacterDetails from "./CharacterDetails";
+import { useEffect, useRef, useState } from "react";
+import type { Character } from "../types";
 
 export default function CharactersList() {
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
+    null,
+  );
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (selectedCharacter) {
+      dialogRef.current?.showModal();
+    }
+  }, [selectedCharacter]);
+
   return (
     <>
-      <ul>
+      <ul className="grid gap-4 md:grid-cols-3">
         {CHARACTERS.map((character, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className={cn(
+              character.id === "zoro"
+                ? "md:order-2 md:col-span-3"
+                : "md:order-1",
+            )}
+          >
             {character.id === "zoro" ? (
               <Link to="/lost/zoro">
                 <CharacterCard data={character} />
               </Link>
             ) : (
-              <button>
+              <button onClick={() => setSelectedCharacter(character)}>
                 <CharacterCard data={character} />
               </button>
             )}
           </li>
         ))}
       </ul>
-      {/* {data.id === "zoro" ? (
-        <section>
-          <CharacterDetails data={data} />
-        </section>
-      ) : (
-        <dialog>
-          <CharacterDetails data={data} />
+
+      {selectedCharacter && (
+        <dialog ref={dialogRef} onClose={() => setSelectedCharacter(null)}>
+          <CharacterDetails
+            character={selectedCharacter}
+            setSelectedCharacter={setSelectedCharacter}
+          />
         </dialog>
-      )} */}
+      )}
     </>
   );
 }
