@@ -22,7 +22,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "luffy",
     srcImg: `${IMG_BASE_URL}luffy.png`,
-    name: "MONKEY D. LUFFY",
+    name: "Monkey D. Luffy",
     bounty: "3,000,000,000",
     job: "Captain",
     birthday: "May 5th",
@@ -50,7 +50,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "usopp",
     srcImg: `${IMG_BASE_URL}usopp.png`,
-    name: "GOD USOPP",
+    name: "God Usopp",
     bounty: "500,000,000",
     job: "Sniper",
     birthday: "April 1st",
@@ -63,7 +63,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "sanji",
     srcImg: `${IMG_BASE_URL}sanji.png`,
-    name: "VINSMOKE SANJI",
+    name: "Vinsmoke Sanji",
     bounty: "1,032,000,000",
     job: "Cook",
     birthday: "March 2nd",
@@ -76,7 +76,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "nami",
     srcImg: `${IMG_BASE_URL}nami.png`,
-    name: "NAMI",
+    name: "Nami",
     bounty: "366,000,000",
     job: "Navigator",
     birthday: "July 3rd",
@@ -89,7 +89,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "chopper",
     srcImg: `${IMG_BASE_URL}chopper.png`,
-    name: "TONY TONY CHOPPER",
+    name: "Tony Tony Chopper",
     bounty: "1,000",
     job: "Doctor",
     birthday: "December 24th",
@@ -102,7 +102,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "robin",
     srcImg: `${IMG_BASE_URL}robin.png`,
-    name: "NICO ROBIN",
+    name: "Nico Robin",
     bounty: "930,000,000",
     job: "Archaeologist",
     birthday: "February 6th",
@@ -115,7 +115,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "franky",
     srcImg: `${IMG_BASE_URL}franky.png`,
-    name: "FRANKY",
+    name: "Franky",
     bounty: "394,000,000",
     job: "Carpenter",
     birthday: "March 9th",
@@ -141,7 +141,7 @@ export const CHARACTERS: Character[] = [
   {
     id: "jinbe",
     srcImg: `${IMG_BASE_URL}jinbe.png`,
-    name: "JINBE",
+    name: "Jinbe",
     bounty: "1,100,000,000",
     job: "Helmsman",
     birthday: "April 2nd",

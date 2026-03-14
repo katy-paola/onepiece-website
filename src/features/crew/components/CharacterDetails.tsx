@@ -20,42 +20,58 @@ export default function CharacterDetails({
   };
 
   return (
-    <article>
+    <article className="flex flex-col gap-4 p-4 bg-radial border border-stroke/30 text-action-text">
       <header>
-        <div>
+        <div className="flex items-center gap-4 mb-1">
           {character.id === "zoro" ? (
             <Link to="/crew">
-              <ArrowLeftIcon />
+              <ArrowLeftIcon className="size-6" />
             </Link>
           ) : (
-            <button onClick={handleCancel}>
-              <CancelIcon />
+            <button onClick={handleCancel} className="order-2">
+              <CancelIcon className="size-6" />
             </button>
           )}
 
-          <h2>{character.id === "zoro" ? "Roronoa Zoro" : character.name}</h2>
+          <h2 className="flex-1 text-2xl font-medium">
+            {character.id === "zoro"
+              ? "Roronoa Zoro"
+              : character.id === "brook"
+                ? "Brook"
+                : character.name}
+          </h2>
         </div>
-        <small>{character.job}</small>
+        <small className="font-semibold text-sm">{character.job}</small>
       </header>
-      <section>
+      <section className="flex flex-col gap-4">
         {character.id === "zoro" ? (
-          <div>
+          <div className="flex gap-1 overflow-x-auto">
             {character.gallery?.map((photo, index) => (
-              <img src={photo} alt={`Zoro's photo number ${index + 1}`} />
+              <img
+                src={photo}
+                alt={`Zoro's photo number ${index + 1}`}
+                className="border border-stroke/30"
+              />
             ))}
           </div>
         ) : (
           <picture>
-            <img src={character.srcImg} alt={`${character.name}'s photo`} />
+            <img
+              src={character.srcImg}
+              alt={`${character.name}'s photo`}
+              className="border border-stroke/30"
+            />
           </picture>
         )}
-        <div>
-          <p>
-            <CakeIcon />
-            {character.birthday}
-          </p>
-          <p>{character.age}</p>
-          <p>{character.size}</p>
+        <div className="flex justify-between font-medium">
+          <div className="flex gap-4">
+            <p className="flex gap-1">
+              <CakeIcon />
+              {character.birthday}
+            </p>
+            <p>{character.age} years old</p>
+          </div>
+          <p>{character.size} cm</p>
         </div>
         {character.id === "zoro" ? (
           <div>

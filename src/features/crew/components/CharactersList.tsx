@@ -44,7 +44,11 @@ export default function CharactersList() {
       </ul>
 
       {selectedCharacter && (
-        <dialog ref={dialogRef} onClose={() => setSelectedCharacter(null)}>
+        <dialog
+          ref={dialogRef}
+          onClose={() => setSelectedCharacter(null)}
+          className="fixed inset-0 m-auto max-w-80 md:max-w-96"
+        >
           <CharacterDetails
             character={selectedCharacter}
             setSelectedCharacter={setSelectedCharacter}

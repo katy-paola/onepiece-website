@@ -36,7 +36,7 @@ export default function CharacterCard({ data }: CharacterCardProps) {
         )}
       >
         <p className="text-3xl md:text-xl">DEAD OR ALIVE</p>
-        <h2 className="text-[2.5rem] md:text-2xl">{data.name}</h2>
+        <h2 className="text-[2.5rem] md:text-2xl">{data.name.toUpperCase()}</h2>
         <p className="text-4xl font-normal md:text-2xl">{data.bounty}</p>
       </section>
     </article>
