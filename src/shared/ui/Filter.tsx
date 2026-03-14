@@ -37,6 +37,7 @@ export default function Filter({ data }: FilterProps) {
               checked: data.selectedIds.includes(category.id),
               onChange: (checked) => toggleId(category.id, checked),
             }}
+            className="cursor-pointer"
           />
         ))}
       </div>
