@@ -12,7 +12,7 @@ export default function ThemeList() {
             data-tooltip-delay-hide={20}
             href="#"
             onClick={(e) => e.preventDefault()}
-            className="flex flex-col justify-between gap-4 p-2 text-action-text bg-radial border border-stroke/30 shadow-md hover:shadow-none"
+            className="flex flex-col justify-between gap-4 p-2 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
           >
             <span className="w-full text-start">{card.label}</span>
             <img
