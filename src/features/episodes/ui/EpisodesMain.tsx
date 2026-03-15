@@ -25,7 +25,7 @@ export default function EpisodesMain() {
   const [selectedArcIdToShow, setSelectedArcIdToShow] = useState<number | null>(
     null,
   );
-  const [selectedArcLabel, setSelectedArcLabel] = useState("");
+
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const { episodes, isLoading: isLoadingEpisodes } = useGetEpisodes(
@@ -56,9 +56,23 @@ export default function EpisodesMain() {
   const { groupCounts, groupTitles, arcLinks } =
     useGetVirtuosoOptions(filteredEpisodes);
 
-  const handleSidebarClick = (groupIndex: number, title: string) => {
-    setSelectedArcLabel(title);
+  const handleSidebarClick = (groupIndex: number) => {
     scrollToArc(groupIndex, groupCounts, virtuosoRef);
+  };
+
+  const [visibleArcIndex, setVisibleArcIndex] = useState(0);
+
+  const handleRangeChanged = (startIndex: number) => {
+    let acc = 0;
+
+    for (let i = 0; i < groupCounts.length; i++) {
+      acc += groupCounts[i];
+
+      if (startIndex < acc) {
+        setVisibleArcIndex(i);
+        break;
+      }
+    }
   };
 
   return (
@@ -89,7 +103,7 @@ export default function EpisodesMain() {
             setIsOpen: setIsSidebarOpen,
           }}
           className={cn(
-            "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex",
+            "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex md:static",
             isSidebarOpen && "flex",
           )}
         />
@@ -105,15 +119,16 @@ export default function EpisodesMain() {
             groupCounts: groupCounts,
             groupTitles: groupTitles,
             selectedArcIdToShow: selectedArcIdToShow,
+            onRangeChanged: handleRangeChanged,
           }}
           ref={virtuosoRef}
         />
         <Button
           hierarchy="secondary"
-          className="flex items-center justify-between fixed left-4 right-4 bottom-4 z-10"
+          className="flex items-center justify-between fixed left-4 right-4 bottom-4 z-10 md:hidden"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          {selectedArcLabel || (arcLinks[0]?.title ?? "Loading arc...")}
+          {groupTitles[visibleArcIndex] ?? ""}
           <SecMenuIcon />
         </Button>
       </section>

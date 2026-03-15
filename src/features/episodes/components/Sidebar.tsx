@@ -6,7 +6,7 @@ import { cn } from "../../../shared/lib/utils";
 interface SidebarProps {
   data: {
     arcLinks: ArcLink[];
-    handleClick: (index: number, title: string) => void;
+    handleClick: (index: number) => void;
     selectedArcIdToShow: number | null;
     setSelectedArcIdToShow: React.Dispatch<React.SetStateAction<number | null>>;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,8 +16,8 @@ interface SidebarProps {
 export default function Sidebar({ data, className }: SidebarProps) {
   const [selectedArcId, setSelectedArcId] = useState<number>(0);
 
-  const handleArcClick = (index: number, title: string) => {
-    data.handleClick(index, title);
+  const handleArcClick = (index: number) => {
+    data.handleClick(index);
     setSelectedArcId(index);
     showSelectedArc(index);
   };
@@ -41,7 +41,7 @@ export default function Sidebar({ data, className }: SidebarProps) {
                   "px-5 py-4 w-full text-start hover:underline",
                   selectedArcId === arc.arcIndex && "underline",
                 )}
-                onClick={() => handleArcClick(arc.arcIndex, arc.title)}
+                onClick={() => handleArcClick(arc.arcIndex)}
               >
                 {arc.title}
               </button>

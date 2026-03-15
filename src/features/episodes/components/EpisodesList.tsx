@@ -9,6 +9,7 @@ interface EpisodesListProps {
     groupCounts: number[];
     groupTitles: string[];
     selectedArcIdToShow: number | null;
+    onRangeChanged: (startIndex: number) => void;
   };
 }
 
@@ -36,6 +37,9 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
               {episode?.id}. {episode?.title}
             </p>
           );
+        }}
+        rangeChanged={(range) => {
+          data.onRangeChanged(range.startIndex);
         }}
       />
     );
