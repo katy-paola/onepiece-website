@@ -6,30 +6,33 @@ import { cn } from "../../../shared/lib/utils";
 interface SidebarProps {
   data: {
     arcLinks: ArcLink[];
-    handleClick: (index: number) => void;
+    handleClick: (index: number, title: string) => void;
     selectedArcIdToShow: number | null;
     setSelectedArcIdToShow: React.Dispatch<React.SetStateAction<number | null>>;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   };
+  className?: string;
 }
-export default function Sidebar({ data }: SidebarProps) {
+export default function Sidebar({ data, className }: SidebarProps) {
   const [selectedArcId, setSelectedArcId] = useState<number>(0);
 
-  const handleArcClick = (index: number) => {
-    data.handleClick(index);
+  const handleArcClick = (index: number, title: string) => {
+    data.handleClick(index, title);
     setSelectedArcId(index);
     showSelectedArc(index);
   };
 
   const showSelectedArc = (index: number) => {
     data.setSelectedArcIdToShow(index);
+    data.setIsOpen(false);
     setTimeout(() => {
       data.setSelectedArcIdToShow(null);
     }, 2000);
   };
 
   return (
-    <aside>
-      <div className="relative bg-white border border-stroke/30">
+    <aside className={cn(className)}>
+      <div className="relative w-full bg-white border border-stroke/30">
         <ul>
           {data.arcLinks.map((arc, index) => (
             <li key={index}>
@@ -38,14 +41,17 @@ export default function Sidebar({ data }: SidebarProps) {
                   "px-5 py-4 w-full text-start hover:underline",
                   selectedArcId === arc.arcIndex && "underline",
                 )}
-                onClick={() => handleArcClick(arc.arcIndex)}
+                onClick={() => handleArcClick(arc.arcIndex, arc.title)}
               >
                 {arc.title}
               </button>
             </li>
           ))}
         </ul>
-        <button className="absolute top-4 right-4 md:hidden">
+        <button
+          className="absolute top-4 right-4 md:hidden"
+          onClick={() => data.setIsOpen(false)}
+        >
           <CancelIcon />
         </button>
       </div>

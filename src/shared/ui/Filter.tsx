@@ -28,7 +28,7 @@ export default function Filter({ data }: FilterProps) {
         placeholder={data.placeholder}
         inputAttributes={{ value: data.query, onChange: data.onQueryChange }}
       />
-      <div className="flex gap-2 w-full overflow-x-auto xl:flex-col">
+      <div className="flex gap-2 w-full overflow-x-auto">
         {data.categories.map((category) => (
           <Checkbox
             key={category.id}

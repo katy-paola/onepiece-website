@@ -17,12 +17,12 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
     return (
       <GroupedVirtuoso
         ref={ref}
-        style={{ height: "70vh" }}
+        style={{ height: "80vh" }}
         groupCounts={data.groupCounts}
         groupContent={(index) => (
           <div
             className={cn(
-              "bg-amber-50 border border-transparent transition-colors",
+              "px-2 py-1 text-center bg-radial border border-stroke/30 transition-colors",
               data.selectedArcIdToShow === index && "border border-stroke",
             )}
           >
@@ -32,7 +32,7 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
         itemContent={(index) => {
           const episode = data.episodes[index];
           return (
-            <p>
+            <p className="m-2">
               {episode?.id}. {episode?.title}
             </p>
           );

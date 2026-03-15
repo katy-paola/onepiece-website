@@ -12,6 +12,7 @@ import { scrollToArc } from "../helpers/scrollToArc";
 import type { GroupedVirtuosoHandle } from "react-virtuoso";
 import { useMemo, useRef, useState } from "react";
 import { useFilter } from "../../../shared/hooks/useFilter";
+import { cn } from "../../../shared/lib/utils";
 
 export default function EpisodesMain() {
   const { sagaId } = useParams();
@@ -24,6 +25,8 @@ export default function EpisodesMain() {
   const [selectedArcIdToShow, setSelectedArcIdToShow] = useState<number | null>(
     null,
   );
+  const [selectedArcLabel, setSelectedArcLabel] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const { episodes, isLoading: isLoadingEpisodes } = useGetEpisodes(
     Number(sagaId),
@@ -53,17 +56,18 @@ export default function EpisodesMain() {
   const { groupCounts, groupTitles, arcLinks } =
     useGetVirtuosoOptions(filteredEpisodes);
 
-  const handleSidebarClick = (groupIndex: number) => {
+  const handleSidebarClick = (groupIndex: number, title: string) => {
+    setSelectedArcLabel(title);
     scrollToArc(groupIndex, groupCounts, virtuosoRef);
   };
 
   return (
     <>
-      <header>
-        <Link to="/episodes">
-          <ArrowLeftIcon />
+      <header className="flex items-center gap-3">
+        <Link to="/episodes" className="hover:scale-105 transition-transform">
+          <ArrowLeftIcon className="size-8" />
         </Link>
-        <h1>{currentSaga.title}</h1>
+        <h1 className="text-3xl font-semibold">{currentSaga.title}</h1>
       </header>
       <Filter
         data={{
@@ -75,16 +79,23 @@ export default function EpisodesMain() {
           placeholder: "Search episode...",
         }}
       />
-      <section>
+      <section className="flex flex-col gap-4">
         <Sidebar
           data={{
             arcLinks: arcLinks,
             handleClick: handleSidebarClick,
             selectedArcIdToShow: selectedArcIdToShow,
             setSelectedArcIdToShow: setSelectedArcIdToShow,
+            setIsOpen: setIsSidebarOpen,
           }}
+          className={cn(
+            "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex",
+            isSidebarOpen && "flex",
+          )}
         />
-        <small>Showing 0 of 0 episodes</small>
+        <small>
+          Showing {filteredEpisodes.length} of {episodes.length} episodes
+        </small>
 
         {isLoadingEpisodes && <p>Loading...</p>}
 
@@ -97,8 +108,12 @@ export default function EpisodesMain() {
           }}
           ref={virtuosoRef}
         />
-        <Button>
-          Arc Romance Dawn
+        <Button
+          hierarchy="secondary"
+          className="flex items-center justify-between fixed left-4 right-4 bottom-4 z-10"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
+          {selectedArcLabel || (arcLinks[0]?.title ?? "Loading arc...")}
           <SecMenuIcon />
         </Button>
       </section>
