@@ -83,54 +83,57 @@ export default function EpisodesMain() {
         </Link>
         <h1 className="text-3xl font-semibold">{currentSaga.title}</h1>
       </header>
-      <Filter
-        data={{
-          categories: filterCategories,
-          selectedIds: selectedIds,
-          onSelectedIdsChange: setSelectedIds,
-          query: query,
-          onQueryChange: setQuery,
-          placeholder: "Search episode...",
-        }}
-      />
-      <section className="flex flex-col gap-4">
-        <Sidebar
+      <section className="flex flex-col gap-6 lg:flex-row">
+        <Filter
           data={{
-            arcLinks: arcLinks,
-            handleClick: handleSidebarClick,
-            selectedArcIdToShow: selectedArcIdToShow,
-            setSelectedArcIdToShow: setSelectedArcIdToShow,
-            setIsOpen: setIsSidebarOpen,
+            categories: filterCategories,
+            selectedIds: selectedIds,
+            onSelectedIdsChange: setSelectedIds,
+            query: query,
+            onQueryChange: setQuery,
+            placeholder: "Search episode...",
           }}
-          className={cn(
-            "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex md:static",
-            isSidebarOpen && "flex",
-          )}
+          className="lg:order-2"
         />
-        <small>
-          Showing {filteredEpisodes.length} of {episodes.length} episodes
-        </small>
+        <section className="grid gap-4 md:grid-cols-[auto_1fr] lg:flex-1">
+          <Sidebar
+            data={{
+              arcLinks: arcLinks,
+              handleClick: handleSidebarClick,
+              selectedArcIdToShow: selectedArcIdToShow,
+              setSelectedArcIdToShow: setSelectedArcIdToShow,
+              setIsOpen: setIsSidebarOpen,
+            }}
+            className={cn(
+              "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex md:static md:row-span-2 md:z-0",
+              isSidebarOpen && "flex",
+            )}
+          />
+          <small>
+            Showing {filteredEpisodes.length} of {episodes.length} episodes
+          </small>
 
-        {isLoadingEpisodes && <p>Loading...</p>}
+          {isLoadingEpisodes && <p>Loading...</p>}
 
-        <EpisodesList
-          data={{
-            episodes: filteredEpisodes,
-            groupCounts: groupCounts,
-            groupTitles: groupTitles,
-            selectedArcIdToShow: selectedArcIdToShow,
-            onRangeChanged: handleRangeChanged,
-          }}
-          ref={virtuosoRef}
-        />
-        <Button
-          hierarchy="secondary"
-          className="flex items-center justify-between fixed left-4 right-4 bottom-4 z-10 md:hidden"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        >
-          {groupTitles[visibleArcIndex] ?? ""}
-          <SecMenuIcon />
-        </Button>
+          <EpisodesList
+            data={{
+              episodes: filteredEpisodes,
+              groupCounts: groupCounts,
+              groupTitles: groupTitles,
+              selectedArcIdToShow: selectedArcIdToShow,
+              onRangeChanged: handleRangeChanged,
+            }}
+            ref={virtuosoRef}
+          />
+          <Button
+            hierarchy="secondary"
+            className="flex items-center justify-between fixed left-4 right-4 bottom-4 z-10 md:hidden"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            {groupTitles[visibleArcIndex] ?? ""}
+            <SecMenuIcon />
+          </Button>
+        </section>
       </section>
     </>
   );

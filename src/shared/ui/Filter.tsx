@@ -1,5 +1,6 @@
 import Checkbox from "../components/Checkbox";
 import Searchbar from "../components/Searchbar";
+import { cn } from "../lib/utils";
 
 interface FilterProps {
   data: {
@@ -10,9 +11,10 @@ interface FilterProps {
     onQueryChange: (value: string) => void;
     placeholder?: string;
   };
+  className?: string;
 }
 
-export default function Filter({ data }: FilterProps) {
+export default function Filter({ data, className }: FilterProps) {
   const toggleId = (id: number, checked: boolean) => {
     data.onQueryChange("");
     data.onSelectedIdsChange(
@@ -22,13 +24,18 @@ export default function Filter({ data }: FilterProps) {
     );
   };
   return (
-    <section className="flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 xl:flex">
+    <section
+      className={cn(
+        "flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 xl:flex",
+        className,
+      )}
+    >
       <Searchbar
         className="md:col-span-2"
         placeholder={data.placeholder}
         inputAttributes={{ value: data.query, onChange: data.onQueryChange }}
       />
-      <div className="flex gap-2 w-full overflow-x-auto">
+      <div className="flex gap-2 w-full overflow-x-auto lg:flex-col">
         {data.categories.map((category) => (
           <Checkbox
             key={category.id}
