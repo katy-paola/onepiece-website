@@ -11,7 +11,7 @@ export default function Hero({ currentHero }: HeroProps) {
     paragraphs: [],
   };
   return (
-    <section>
+    <section className="flex flex-col gap-4">
       <h1 className="text-4xl font-onepiece text-gradient w-max md:text-5xl">
         {hero.title}
       </h1>
