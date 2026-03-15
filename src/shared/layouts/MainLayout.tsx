@@ -5,7 +5,7 @@ export default function MainLayout() {
   return (
     <>
       <Header />
-      <main className="mt-18">
+      <main className="grid gap-6 max-w-3xl">
         <Outlet />
       </main>
     </>
