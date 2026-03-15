@@ -10,16 +10,11 @@ export default function CharacterCard({ data }: CharacterCardProps) {
   return (
     <article
       className={cn(
-        "grid p-4 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none transition-all",
-        isZoro && "md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr]",
+        "grid p-4 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none transition-all md:p-3",
+        isZoro && "md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr] md:gap-4",
       )}
     >
-      <p
-        className={cn(
-          "text-8xl md:text-4xl",
-          isZoro && "md:col-start-2 md:pt-4 md:pl-4",
-        )}
-      >
+      <p className={cn("text-8xl md:text-4xl", isZoro && "md:col-start-2")}>
         WANTED
       </p>
       <picture className={cn(isZoro && "md:row-span-2 md:row-start-1")}>
@@ -31,8 +26,8 @@ export default function CharacterCard({ data }: CharacterCardProps) {
       </picture>
       <section
         className={cn(
-          "flex flex-col gap-4 p-4 pb-0 font-medium text-center",
-          isZoro && "md:col-start-2 md:text-start",
+          "flex flex-col gap-4 p-4 pb-0 font-medium text-center md:px-0",
+          isZoro && "md:col-start-2 md:text-start md:p-0",
         )}
       >
         <p className="text-3xl md:text-xl">DEAD OR ALIVE</p>
