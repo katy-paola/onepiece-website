@@ -8,10 +8,15 @@ interface LinkElementProps extends ComponentPropsWithoutRef<"a"> {
   hierarchy?: "primary" | "secondary";
   variant?: "default" | "icon";
   href: string;
+  className?: string;
 }
 
-export default function LinkElement(props: LinkElementProps) {
+export default function LinkElement({ className, ...props }: LinkElementProps) {
   return (
-    <Link to={props.href} className={cn(actionStyles(props))} {...props} />
+    <Link
+      to={props.href}
+      {...props}
+      className={cn(actionStyles({ ...props }), className)}
+    />
   );
 }
