@@ -103,6 +103,7 @@ export default function EpisodesMain() {
               selectedArcIdToShow: selectedArcIdToShow,
               setSelectedArcIdToShow: setSelectedArcIdToShow,
               setIsOpen: setIsSidebarOpen,
+              visibleArcIndex: visibleArcIndex,
             }}
             className={cn(
               "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex md:static md:row-span-2 md:z-0",

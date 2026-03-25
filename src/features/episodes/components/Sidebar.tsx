@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CancelIcon from "../../../shared/icons/CancelIcon";
 import type { ArcLink } from "../types";
 import { cn } from "../../../shared/lib/utils";
@@ -10,15 +10,13 @@ interface SidebarProps {
     selectedArcIdToShow: number | null;
     setSelectedArcIdToShow: React.Dispatch<React.SetStateAction<number | null>>;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    visibleArcIndex: number;
   };
   className?: string;
 }
 export default function Sidebar({ data, className }: SidebarProps) {
-  const [selectedArcId, setSelectedArcId] = useState<number>(0);
-
   const handleArcClick = (index: number) => {
     data.handleClick(index);
-    setSelectedArcId(index);
     showSelectedArc(index);
   };
 
@@ -39,7 +37,7 @@ export default function Sidebar({ data, className }: SidebarProps) {
               <button
                 className={cn(
                   "px-5 py-4 w-full text-start hover:underline",
-                  selectedArcId === arc.arcIndex && "underline",
+                  data.visibleArcIndex === arc.arcIndex && "underline",
                 )}
                 onClick={() => handleArcClick(arc.arcIndex)}
               >
