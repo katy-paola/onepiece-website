@@ -95,7 +95,7 @@ export default function EpisodesMain() {
           }}
           className="lg:order-2"
         />
-        <section className="grid gap-4 md:grid-cols-[auto_1fr] lg:flex-1">
+        <section className="grid gap-4 md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr] lg:flex-1">
           <Sidebar
             data={{
               arcLinks: arcLinks,

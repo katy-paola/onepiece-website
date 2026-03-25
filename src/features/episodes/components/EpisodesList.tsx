@@ -18,7 +18,7 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
     return (
       <GroupedVirtuoso
         ref={ref}
-        style={{ height: "90vh" }}
+        style={{ height: "100%" }}
         groupCounts={data.groupCounts}
         groupContent={(index) => (
           <div
