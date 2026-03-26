@@ -9,16 +9,15 @@ export default function ThemeList() {
           <a
             data-tooltip-id={`${card.label.toLowerCase()}-tooltip-id`}
             data-tooltip-content={card.tooltip.message}
-            data-tooltip-delay-hide={20}
             href="#"
             onClick={(e) => e.preventDefault()}
-            className="flex flex-col justify-between gap-4 p-2 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
+            className="flex flex-col justify-between p-2 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
           >
             <span className="w-full text-start">{card.label}</span>
             <img
               src={card.srcImg}
               alt={`${card.label} chibi photo`}
-              className="size-16 self-end"
+              className="size-14 self-end -mt-4"
             />
           </a>
           <Tooltip
