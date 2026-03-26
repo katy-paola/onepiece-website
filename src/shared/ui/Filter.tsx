@@ -26,7 +26,7 @@ export default function Filter({ data, className }: FilterProps) {
   return (
     <section
       className={cn(
-        "flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 xl:flex",
+        "flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 lg:flex",
         className,
       )}
     >
@@ -49,7 +49,12 @@ export default function Filter({ data, className }: FilterProps) {
         ))}
       </div>
       <button
-        className="underline hover:no-underline w-max"
+        className={cn(
+          "underline hover:no-underline w-max transition-all",
+          data.categories.length === 0
+            ? "opacity-0 invisible"
+            : "opacity-100 visible",
+        )}
         onClick={() => {
           data.onQueryChange("");
           data.onSelectedIdsChange([]);

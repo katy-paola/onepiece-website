@@ -18,7 +18,7 @@ export default function Checkbox({
   return (
     <label
       className={cn(
-        "flex gap-2 px-4 py-3 border border-stroke text-action-text has-checked:bg-checkbox",
+        "flex gap-2 px-3 py-2 border border-stroke text-action-text has-checked:bg-checkbox",
         className,
       )}
     >

@@ -83,7 +83,7 @@ export default function EpisodesMain() {
         </Link>
         <h1 className="text-3xl font-semibold">{currentSaga.title}</h1>
       </header>
-      <section className="flex flex-col gap-6 lg:flex-row">
+      <section className="grid gap-6 h-full lg:grid-cols-[8fr_2fr]">
         <Filter
           data={{
             categories: filterCategories,
@@ -95,7 +95,7 @@ export default function EpisodesMain() {
           }}
           className="lg:order-2"
         />
-        <section className="grid gap-4 md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr] lg:flex-1">
+        <section className="grid grid-cols-1 gap-4 md:grid-cols-[3fr_7fr] grid-rows-[auto_1fr] flex-1">
           <Sidebar
             data={{
               arcLinks: arcLinks,
@@ -106,7 +106,7 @@ export default function EpisodesMain() {
               visibleArcIndex: visibleArcIndex,
             }}
             className={cn(
-              "hidden fixed z-10 bottom-18.5 left-4 right-4 md:flex md:static md:row-span-2 md:z-0",
+              "hidden fixed z-10 bottom-18.5 left-4 right-4 h-max md:flex md:static md:row-span-2 md:z-0",
               isSidebarOpen && "flex",
             )}
           />
