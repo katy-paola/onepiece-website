@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NAVBAR_LINKS } from "../consts";
 import Button from "../components/Button";
 import MainMenuIcon from "../icons/MainMenuIcon";
@@ -8,7 +8,11 @@ import { cn } from "../lib/utils";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>("homepage");
+  const location = useLocation();
+  const pathname = location.pathname;
+  const activeTab =
+    pathname === "/lost/zoro" ? "/crew" : `/${pathname.split("/")[1]}`;
+
   return (
     <header className="fixed top-0 w-full flex justify-between items-center p-4 bg-radial z-10">
       <Link to="/" title="Go to homepage">
@@ -31,10 +35,9 @@ export default function Header() {
               <Link
                 className={cn(
                   "p-2 hover:underline",
-                  activeTab === link.id && "underline",
+                  activeTab === link.href && "underline",
                 )}
                 to={link.href}
-                onClick={() => setActiveTab(link.id)}
               >
                 {link.label}
               </Link>
