@@ -43,25 +43,28 @@ export default function FruitsMain() {
     <>
       <Hero currentHero="fruits" />
 
-      <Filter
-        data={{
-          categories: filterCategories,
-          selectedIds,
-          onSelectedIdsChange: setSelectedIds,
-          query,
-          onQueryChange: setQuery,
-          placeholder: "Search fruits...",
-        }}
-      />
+      <section className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <Filter
+          data={{
+            categories: filterCategories,
+            selectedIds,
+            onSelectedIdsChange: setSelectedIds,
+            query,
+            onQueryChange: setQuery,
+            placeholder: "Search fruits...",
+          }}
+          className="lg:order-2 lg:sticky lg:top-24 lg:self-start"
+        />
 
-      <section>
-        <small>
-          Showing {filteredFruits.length} of {fruitsToDisplay.length} fruits
-        </small>
+        <section className="flex flex-col gap-3">
+          <small className="lg:self-end">
+            Showing {filteredFruits.length} of {fruitsToDisplay.length} fruits
+          </small>
 
-        {isLoadingFruits && <p>Loading...</p>}
+          {isLoadingFruits && <p>Loading...</p>}
 
-        <FruitsList fruits={filteredFruits} />
+          <FruitsList fruits={filteredFruits} />
+        </section>
       </section>
     </>
   );
