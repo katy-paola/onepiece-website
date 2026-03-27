@@ -36,7 +36,7 @@ export const HERO_LIST: HeroContent[] = [
     id: "homepage",
     title: "Welcome to One Piece",
     paragraphs: [
-      "Here you can find all the episodes and a little something extra. Stick around, it'll be fun, trust me.",
+      "Here you can explore info about episodes and a little extra. Stick around, it'll be fun, trust me.",
       "You don't know One Piece? It's a 25-year-long story about a rubber boy who can't swim but wants to be King of the Pirates. He travels with a crew of weirdos chasing a treasure that is supposedly real, in an epic tale of dreams and freedom.",
       "But before we dive in: who's your favorite character? Mine is Roronoa Zoro. He gets lost walking in a straight line, but I love him.",
     ],

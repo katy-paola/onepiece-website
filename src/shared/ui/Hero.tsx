@@ -16,7 +16,7 @@ export default function Hero({ currentHero }: HeroProps) {
         {hero.title}
       </h1>
       {hero.id === "homepage" ? (
-        <div>
+        <div className="flex flex-col gap-4">
           {hero.paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
