@@ -53,7 +53,7 @@ export default function FruitsMain() {
             onQueryChange: setQuery,
             placeholder: "Search fruits...",
           }}
-          className="lg:order-2 lg:sticky lg:top-24 lg:self-start"
+          className="lg:order-2 lg:sticky lg:top-32 lg:self-start"
         />
 
         <section className="flex flex-col gap-3">

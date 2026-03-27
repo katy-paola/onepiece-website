@@ -14,7 +14,7 @@ export default function Header() {
     pathname === "/lost/zoro" ? "/crew" : `/${pathname.split("/")[1]}`;
 
   return (
-    <header className="fixed top-0 w-full flex justify-between items-center p-4 bg-radial z-10">
+    <header className="fixed top-0 w-full flex justify-between items-center p-4 bg-radial z-10 lg:px-12 lg:py-8">
       <Link to="/" title="Go to homepage">
         <img
           src="/logos/onepiece-logo.png"
