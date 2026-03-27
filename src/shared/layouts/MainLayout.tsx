@@ -9,7 +9,7 @@ export default function MainLayout() {
       <Header />
       <main
         className={cn(
-          "flex flex-col gap-6 h-full",
+          "flex flex-col gap-6 px-4 py-6 h-full lg:mx-auto xl:p-12",
           !fullWidth ? "max-w-3xl" : "max-w-300",
         )}
       >
