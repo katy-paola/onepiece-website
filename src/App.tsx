@@ -7,20 +7,35 @@ import CrewMain from "./features/crew/ui/CrewMain";
 import ZoroMain from "./features/crew/ui/ZoroMain";
 import FruitsMain from "./features/fruits/ui/FruitsMain";
 
-
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomepageMain />} />
-        <Route path="/episodes" element={<SagasMain />} />
-        <Route path="/episodes/:sagaId" element={<EpisodesMain />} />
-        <Route path="/crew" element={<CrewMain />} />
-        <Route path="/lost/zoro" element={<ZoroMain />} />
-        <Route path="/fruits" element={<FruitsMain />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomepageMain />} />
+          <Route path="/episodes" element={<SagasMain />} />
+          <Route path="/episodes/:sagaId" element={<EpisodesMain />} />
+          <Route path="/crew" element={<CrewMain />} />
+          <Route path="/lost/zoro" element={<ZoroMain />} />
+          <Route path="/fruits" element={<FruitsMain />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
 export default App;
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
