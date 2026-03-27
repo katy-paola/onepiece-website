@@ -48,6 +48,7 @@ export default function CharacterDetails({
           <div className="flex gap-1 overflow-x-auto">
             {character.gallery?.map((photo, index) => (
               <img
+                key={index}
                 src={photo}
                 alt={`Zoro's photo number ${index + 1}`}
                 className="border border-stroke/30"
@@ -70,11 +71,12 @@ export default function CharacterDetails({
               {character.birthday}
             </p>
             <p>{character.age} years old</p>
+            {character.id === "zoro" && <p>1,111,000,000</p>}
           </div>
           <p>{character.size} cm</p>
         </div>
         {character.id === "zoro" ? (
-          <div>
+          <div className="flex flex-col gap-4">
             {character.description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
