@@ -6,7 +6,7 @@ export const THEME_CARDS: ThemeCard[] = [
     srcImg: "/theme-card/chibi-luffy.png",
     tooltip: {
       message: "Shishishi! You have good taste! Hey, you... Become my nakama!",
-      color: "#FF655E",
+      color: "#ff7d76",
     },
   },
   {
@@ -15,7 +15,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "Hmph. Smart choice. Now be quiet, I'm trying to nap... and pass the sake.",
-      color: "#6DBD90",
+      color: "#8ed8ae",
     },
   },
   {
@@ -23,7 +23,7 @@ export const THEME_CARDS: ThemeCard[] = [
     srcImg: "/theme-card/chibi-usopp.png",
     tooltip: {
       message: "Of course! You're looking at the man with 8,000 followers!",
-      color: "#F49D59",
+      color: "#f5b585",
     },
   },
   {
@@ -32,7 +32,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "A fan?! If you're a lady, I'm yours! If you're a man... go make your own sandwich.",
-      color: "#DFC264",
+      color: "#ecd791",
     },
   },
   {
@@ -41,7 +41,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "I'm your favorite? That's sweet! Now, that'll be 100,000 Berries for the compliment.",
-      color: "#FF9D71",
+      color: "#f8b08e",
     },
   },
   {
@@ -50,7 +50,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "Shut up, you jerk! Calling me your favorite doesn't make me happy at all! ♡",
-      color: "#F68E87",
+      color: "#fa9f99",
     },
   },
   {
@@ -59,7 +59,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "Thank you. It's comforting to know someone will remember me when only my bones are left.",
-      color: "#ABA9D0",
+      color: "#b3b2d1",
     },
   },
   {
@@ -68,7 +68,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "SUUUUPER choice! You've got style, kid! My bangs are vibrating with joy!",
-      color: "#80C4F6",
+      color: "#a5d3f3",
     },
   },
   {
@@ -77,7 +77,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "I'm so touched I could cry! But I don't have eyes to cry with! Yo-ho-ho-ho!",
-      color: "#B9BAAF",
+      color: "#d6d6d3",
     },
   },
   {
@@ -86,7 +86,7 @@ export const THEME_CARDS: ThemeCard[] = [
     tooltip: {
       message:
         "I am honored by your loyalty. I shall guard this click with my very life.",
-      color: "#88BFEE",
+      color: "#b0d6f7",
     },
   },
 ];
