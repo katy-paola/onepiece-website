@@ -3,6 +3,6 @@ export interface ThemeCard {
   srcImg: string;
   tooltip: {
     message: string;
-    idColor: string;
+    color: string;
   };
 }
