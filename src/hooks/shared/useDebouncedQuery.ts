@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
-import { normalizeQuery } from "../../helpers/normalizeQuery";
 
 const DEBOUNCE_DELAY = 250;
 
 export function useDebouncedQuery(query: string) {
-  const normalized = normalizeQuery(query);
-  const [debouncedQuery, setDebouncedQuery] = useState(normalized);
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
 
   useEffect(() => {
-    if (normalized === debouncedQuery) return;
     const id = setTimeout(() => {
-      setDebouncedQuery(normalized);
+      setDebouncedQuery(query);
     }, DEBOUNCE_DELAY);
 
     return () => clearTimeout(id);
-  }, [normalized, debouncedQuery]);
+  }, [query]);
 
   return debouncedQuery;
 }

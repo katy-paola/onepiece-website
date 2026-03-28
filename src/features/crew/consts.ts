@@ -1,0 +1,154 @@
+import type { Character } from "./types";
+
+const IMG_BASE_URL = "/posters/";
+const ZORO_GALLERY = Array.from(
+  { length: 5 },
+  (_, i) => `/zoro/zoro${i + 1}.png`,
+);
+
+export const EMPTY_CHARACTER = {
+  id: "",
+  srcImg: "",
+  name: "",
+  bounty: "",
+  job: "",
+  birthday: "",
+  age: 0,
+  size: 0,
+  description: [],
+};
+
+export const CHARACTERS: Character[] = [
+  {
+    id: "luffy",
+    srcImg: `${IMG_BASE_URL}luffy.png`,
+    name: "Monkey D. Luffy",
+    bounty: "3,000,000,000",
+    job: "Captain",
+    birthday: "May 5th",
+    age: 19,
+    size: 174,
+    description: [
+      "A rubber boy who can't swim but decided he's becoming King of the Pirates anyway. Runs on meat, chaos, and pure freedom.",
+    ],
+  },
+  {
+    id: "zoro",
+    srcImg: `${IMG_BASE_URL}zoro.png`,
+    name: "404 - NOT FOUND",
+    bounty: "GO FIND HIM",
+    gallery: ZORO_GALLERY,
+    job: "Right-hand man",
+    birthday: "November 11st",
+    age: 21,
+    size: 181,
+    description: [
+      "A master of Santoryu (three-sword style), which means yes, he puts one sword in his mouth and somehow makes it look cool. His life revolves around training until his bones creak, napping like it's an Olympic sport, drinking like a pirate stereotype, and chasing the dream of becoming the world's greatest swordsman. His sense of direction is catastrophically nonexistent, if there's a wrong way to go, he'll find it with confidence.",
+      "Fiercely loyal, terrifying in battle, emotionally constipated but deeply honorable, Zoro is the kind of guy who'll get lost on the way to a fight… and still arrive first. And if you ask him for directions, he won't be offended because according to him, he's never the one who's lost, the world just happens to be wrong.",
+    ],
+  },
+  {
+    id: "usopp",
+    srcImg: `${IMG_BASE_URL}usopp.png`,
+    name: "God Usopp",
+    bounty: "500,000,000",
+    job: "Sniper",
+    birthday: "April 1st",
+    age: 19,
+    size: 176,
+    description: [
+      "Professional sniper and part-time pathological liar. Cowardly? Sometimes. Clutch when it matters? Absolutely.",
+    ],
+  },
+  {
+    id: "sanji",
+    srcImg: `${IMG_BASE_URL}sanji.png`,
+    name: "Vinsmoke Sanji",
+    bounty: "1,032,000,000",
+    job: "Cook",
+    birthday: "March 2nd",
+    age: 21,
+    size: 180,
+    description: [
+      "Smooth-talking chef who kicks first and flirts later. Simps respectfully, cooks flawlessly.",
+    ],
+  },
+  {
+    id: "nami",
+    srcImg: `${IMG_BASE_URL}nami.png`,
+    name: "Nami",
+    bounty: "366,000,000",
+    job: "Navigator",
+    birthday: "July 3rd",
+    age: 20,
+    size: 170,
+    description: [
+      "Genius navigator with a built-in money detector. Can predict storms and drain your wallet in the same afternoon.",
+    ],
+  },
+  {
+    id: "chopper",
+    srcImg: `${IMG_BASE_URL}chopper.png`,
+    name: "Tony Tony Chopper",
+    bounty: "1,000",
+    job: "Doctor",
+    birthday: "December 24th",
+    age: 17,
+    size: 90,
+    description: [
+      "Adorable reindeer doctor who can turn into a not-so-adorable emergency backup plan. Mostly cute. Occasionally terrifying.",
+    ],
+  },
+  {
+    id: "robin",
+    srcImg: `${IMG_BASE_URL}robin.png`,
+    name: "Nico Robin",
+    bounty: "930,000,000",
+    job: "Archaeologist",
+    birthday: "February 6th",
+    age: 30,
+    size: 188,
+    description: [
+      "Calm archaeologist with dark humor and extra hands for personal space violations. Knows history and your secrets.",
+    ],
+  },
+  {
+    id: "franky",
+    srcImg: `${IMG_BASE_URL}franky.png`,
+    name: "Franky",
+    bounty: "394,000,000",
+    job: "Carpenter",
+    birthday: "March 9th",
+    age: 36,
+    size: 240,
+    description: [
+      "Cola-powered cyborg shipwright who does everything in SUPER mode. Subtlety left the chat.",
+    ],
+  },
+  {
+    id: "brook",
+    srcImg: `${IMG_BASE_URL}brook.png`,
+    name: "THE SK BROOK",
+    bounty: "383,000,000",
+    job: "Musician",
+    birthday: "April 3rd",
+    age: 90,
+    size: 277,
+    description: [
+      "Living skeleton musician making bone jokes because… he has no skin in the game. Yohohoho.",
+    ],
+  },
+  {
+    id: "jinbe",
+    srcImg: `${IMG_BASE_URL}jinbe.png`,
+    name: "Jinbe",
+    bounty: "1,100,000,000",
+    job: "Helmsman",
+    birthday: "April 2nd",
+    age: 46,
+    size: 301,
+    description: [
+      "Honorable fish-man karate master and the crew's unofficial adult supervision. Calm, wise, and hits like a tidal wave.",
+    ],
+  },
+];
