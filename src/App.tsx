@@ -19,6 +19,7 @@ function App() {
           <Route path="/crew" element={<CrewMain />} />
           <Route path="/lost/zoro" element={<ZoroMain />} />
           <Route path="/fruits" element={<FruitsMain />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
@@ -29,6 +30,7 @@ export default App;
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import NotFound from "./shared/pages/NotFound";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
