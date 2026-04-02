@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { NAVBAR_LINKS } from "../consts";
+import { NAVBAR_LINKS, BG_COLORS, type BgColor } from "../consts";
 import Button from "../components/Button";
 import MainMenuIcon from "../icons/MainMenuIcon";
 import CancelIcon from "../icons/CancelIcon";
@@ -15,9 +15,15 @@ export default function Header() {
     pathname === "/lost/zoro" ? "/crew" : `/${pathname.split("/")[1]}`;
 
   const theme = useCurrentTheme();
+  const bgColor: BgColor = BG_COLORS[theme.color];
 
   return (
-    <header className="fixed top-0 w-full flex justify-between items-center p-4 bg-default-bg z-10 lg:px-12 lg:py-8">
+    <header
+      className={cn(
+        "fixed top-0 w-full flex justify-between items-center p-4 z-10 transition-colors duration-300 lg:px-12 lg:py-8",
+        bgColor,
+      )}
+    >
       <Link to="/" title="Go to homepage">
         <img src={theme.logoUrl} alt="One Piece Logo" className="h-10" />
       </Link>

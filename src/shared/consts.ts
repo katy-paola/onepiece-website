@@ -129,6 +129,21 @@ export const TITLE_COLORS = {
   jinbe: "text-jinbe-text",
 } as const;
 
+export const BG_COLORS = {
+  default: "bg-default-bg",
+  luffy: "bg-luffy-bg",
+  zoro: "bg-zoro-bg",
+  nami: "bg-nami-bg",
+  sanji: "bg-sanji-bg",
+  robin: "bg-robin-bg",
+  usopp: "bg-usopp-bg",
+  chopper: "bg-chopper-bg",
+  franky: "bg-franky-bg",
+  brook: "bg-brook-bg",
+  jinbe: "bg-jinbe-bg",
+} as const;
+
 export type ThemeName = keyof typeof THEMES;
 export type Theme = (typeof THEMES)[ThemeName];
 export type TitleColor = (typeof TITLE_COLORS)[keyof typeof TITLE_COLORS];
+export type BgColor = (typeof BG_COLORS)[keyof typeof BG_COLORS];
