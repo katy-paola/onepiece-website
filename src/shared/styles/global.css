@@ -77,16 +77,16 @@ body,
   /**Background**/
 
   /* El color de fondo por defecto que se cambiaría es el gradiente radial definido en @layer utilities como bg-default-bg*/
-  --luffy-bg: #ff655e;
-  --zoro-bg: #6dbd90;
-  --usopp-bg: #f49d59;
-  --sanji-bg: #dfc264;
-  --nami-bg: #ff9d71;
-  --chopper-bg: #f68e87;
-  --robin-bg: #aba9d0;
-  --franky-bg: #80c4f6;
-  --brook-bg: #b9baaf;
-  --jinbe-bg: #88bfee;
+  --luffy-bg: #ff918b;
+  --zoro-bg: #9edab8;
+  --usopp-bg: #f7af79;
+  --sanji-bg: #ebd079;
+  --nami-bg: #faaf7d;
+  --chopper-bg: #faa09a;
+  --robin-bg: #bebcdd;
+  --franky-bg: #91cdf8;
+  --brook-bg: #c3c4be;
+  --jinbe-bg: #99bbf0;
 
   /**Text**/
 
