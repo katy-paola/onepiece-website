@@ -4,6 +4,9 @@ import ArrowLeftIcon from "../../../shared/icons/ArrowLeftIcon";
 import CancelIcon from "../../../shared/icons/CancelIcon";
 import CakeIcon from "../../../shared/icons/CakeIcon";
 import type React from "react";
+import { type BgColor, BG_COLORS } from "../../../shared/consts";
+import { useCurrentTheme } from "../../../shared/hooks/useCurrentTheme";
+import { cn } from "../../../shared/lib/utils";
 
 interface CharacterDetailsProps {
   character: Character;
@@ -13,6 +16,9 @@ export default function CharacterDetails({
   character,
   setSelectedCharacter,
 }: CharacterDetailsProps) {
+  const theme = useCurrentTheme();
+  const bgColor: BgColor = BG_COLORS[theme.color];
+
   const handleCancel = () => {
     if (setSelectedCharacter) {
       setSelectedCharacter(null);
@@ -20,7 +26,12 @@ export default function CharacterDetails({
   };
 
   return (
-    <article className="flex flex-col gap-4 p-4 bg-default-bg border border-stroke/30 text-action-text">
+    <article
+      className={cn(
+        "flex flex-col gap-4 p-4 border border-stroke/30 text-action-text",
+        bgColor,
+      )}
+    >
       <header>
         <div className="flex items-center gap-4 mb-1">
           {character.id === "zoro" ? (
