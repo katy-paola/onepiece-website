@@ -29,7 +29,8 @@ export default function Header() {
       </Link>
       <nav
         className={cn(
-          "flex justify-between items-start p-4 fixed top-0 right-0 translate-x-full z-10 bg-default-bg-bg w-full transition-transform duration-300",
+          "flex justify-between items-start p-4 fixed top-0 right-0 translate-x-full z-10 w-full transition-all duration-300",
+          bgColor,
           isOpen && "translate-x-0",
           "md:static md:translate-none md:right-auto md:w-max md:p-0",
         )}
