@@ -10,7 +10,7 @@ export default function CharacterCard({ data }: CharacterCardProps) {
   return (
     <article
       className={cn(
-        "grid p-4 text-action-text bg-default-bg-bg-bg-bg border border-stroke/30 shadow-card hover:shadow-none transition-all md:p-3",
+        "grid p-4 text-action-text bg-default-bg border border-stroke/30 shadow-card hover:shadow-none transition-all md:p-3",
         isZoro && "md:grid-cols-[auto_1fr] md:grid-rows-[auto_1fr] md:gap-4",
       )}
     >
