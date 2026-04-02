@@ -23,7 +23,7 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
         groupContent={(index) => (
           <div
             className={cn(
-              "px-2 py-1 text-center bg-radial border border-stroke/30 transition-colors",
+              "px-2 py-1 text-center bg-default-bg border border-stroke/30 transition-colors",
               data.selectedArcIdToShow === index && "border border-stroke",
             )}
           >

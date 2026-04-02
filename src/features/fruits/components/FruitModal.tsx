@@ -15,7 +15,7 @@ export default function FruitModal({
     }
   };
   return (
-    <article className="flex flex-col gap-4 p-4 max-h-[80vh] bg-radial border border-stroke/30 text-action-text">
+    <article className="flex flex-col gap-4 p-4 max-h-[80vh] bg-default-bg border border-stroke/30 text-action-text">
       <header>
         <div className="flex gap-4 mb-1">
           <h2 className="flex-1 text-2xl font-medium">

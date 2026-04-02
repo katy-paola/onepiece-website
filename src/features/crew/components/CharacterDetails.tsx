@@ -20,7 +20,7 @@ export default function CharacterDetails({
   };
 
   return (
-    <article className="flex flex-col gap-4 p-4 bg-radial border border-stroke/30 text-action-text">
+    <article className="flex flex-col gap-4 p-4 bg-default-bg border border-stroke/30 text-action-text">
       <header>
         <div className="flex items-center gap-4 mb-1">
           {character.id === "zoro" ? (
