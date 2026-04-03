@@ -22,7 +22,7 @@ export default function CharacterCard({ data }: CharacterCardProps) {
           loading="lazy"
           src={data.srcImg}
           alt={`${data.name} poster`}
-          className="aspect-65/48 border border-stroke/30 md:max-h-45"
+          className="aspect-65/48 border border-stroke/30 min-h-40 md:max-h-45"
         />
       </picture>
       <section
