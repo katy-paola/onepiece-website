@@ -48,7 +48,7 @@ export default function FruitModal({
             className="size-full object-contain"
           />
         </picture>
-        <p className="overflow-y-auto flex-1">{fruit.description}</p>
+        <p className="overflow-y-auto flex-1 text-text">{fruit.description}</p>
       </section>
     </article>
   );

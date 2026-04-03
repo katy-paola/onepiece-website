@@ -87,13 +87,13 @@ export default function CharacterDetails({
           <p>{character.size} cm</p>
         </div>
         {character.id === "zoro" ? (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-text">
             {character.description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
         ) : (
-          <p>{character.description[0]}</p>
+          <p className="text-text">{character.description[0]}</p>
         )}
       </section>
     </article>
