@@ -1,7 +1,19 @@
 import { Tooltip } from "react-tooltip";
 import { THEME_CARDS } from "../consts";
+import { useTheme } from "../../../shared/hooks/useTheme";
+import type { ThemeName } from "../../../shared/consts";
 
 export default function ThemeList() {
+  const { setTheme } = useTheme();
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: ThemeName,
+  ) => {
+    e.preventDefault();
+    setTheme(id);
+  };
+
   return (
     <ul className="grid grid-cols-2 gap-4 md:grid-cols-5">
       {THEME_CARDS.map((card, index) => (
@@ -9,7 +21,7 @@ export default function ThemeList() {
           <a
             data-tooltip-id={`${card.label.toLowerCase()}-tooltip-id`}
             href="#"
-            onClick={(e) => e.preventDefault()}
+            onClick={(e) => handleClick(e, card.id as ThemeName)}
             className="flex flex-col justify-between p-2 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
           >
             <span className="w-full text-start">{card.label}</span>

@@ -2,6 +2,8 @@ import { GroupedVirtuoso, type GroupedVirtuosoHandle } from "react-virtuoso";
 import type { Episode } from "../types";
 import { forwardRef } from "react";
 import { cn } from "../../../shared/lib/utils";
+import { type BgColor, BG_COLORS } from "../../../shared/consts";
+import { useCurrentTheme } from "../../../shared/hooks/useCurrentTheme";
 
 interface EpisodesListProps {
   data: {
@@ -15,6 +17,8 @@ interface EpisodesListProps {
 
 const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
   function EpisodesList({ data }, ref) {
+    const { theme } = useCurrentTheme();
+    const bgColor: BgColor = BG_COLORS[theme.color];
     return (
       <GroupedVirtuoso
         ref={ref}
@@ -23,7 +27,8 @@ const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
         groupContent={(index) => (
           <div
             className={cn(
-              "px-2 py-1 text-center bg-radial border border-stroke/30 transition-colors",
+              "px-2 py-1 text-center border border-stroke/30 transition-colors",
+              bgColor,
               data.selectedArcIdToShow === index && "border border-stroke",
             )}
           >

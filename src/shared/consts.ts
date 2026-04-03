@@ -65,3 +65,85 @@ export const HERO_LIST: HeroContent[] = [
     ],
   },
 ];
+
+const BASE_LOGO_URL = "/logos/";
+const END_LOGO_URL = "-logo.png";
+export const THEMES = {
+  default: {
+    color: "default",
+    logoUrl: `${BASE_LOGO_URL}onepiece${END_LOGO_URL}`,
+  },
+  luffy: {
+    color: "luffy",
+    logoUrl: `${BASE_LOGO_URL}luffy${END_LOGO_URL}`,
+  },
+  zoro: {
+    color: "zoro",
+    logoUrl: `${BASE_LOGO_URL}zoro${END_LOGO_URL}`,
+  },
+  usopp: {
+    color: "usopp",
+    logoUrl: `${BASE_LOGO_URL}usopp${END_LOGO_URL}`,
+  },
+  sanji: {
+    color: "sanji",
+    logoUrl: `${BASE_LOGO_URL}sanji${END_LOGO_URL}`,
+  },
+  nami: {
+    color: "nami",
+    logoUrl: `${BASE_LOGO_URL}nami${END_LOGO_URL}`,
+  },
+  chopper: {
+    color: "chopper",
+    logoUrl: `${BASE_LOGO_URL}chopper${END_LOGO_URL}`,
+  },
+  robin: {
+    color: "robin",
+    logoUrl: `${BASE_LOGO_URL}robin${END_LOGO_URL}`,
+  },
+  franky: {
+    color: "franky",
+    logoUrl: `${BASE_LOGO_URL}franky${END_LOGO_URL}`,
+  },
+  brook: {
+    color: "brook",
+    logoUrl: `${BASE_LOGO_URL}brook${END_LOGO_URL}`,
+  },
+  jinbe: {
+    color: "jinbe",
+    logoUrl: `${BASE_LOGO_URL}jinbe${END_LOGO_URL}`,
+  },
+} as const;
+
+export const TITLE_COLORS = {
+  default: "text-default-text",
+  luffy: "text-luffy-text",
+  zoro: "text-zoro-text",
+  nami: "text-nami-text",
+  sanji: "text-sanji-text",
+  robin: "text-robin-text",
+  usopp: "text-usopp-text",
+  chopper: "text-chopper-text",
+  franky: "text-franky-text",
+  brook: "text-brook-text",
+  jinbe: "text-jinbe-text",
+} as const;
+
+export const BG_COLORS = {
+  default: "bg-default-bg",
+  luffy: "bg-luffy-bg",
+  zoro: "bg-zoro-bg",
+  nami: "bg-nami-bg",
+  sanji: "bg-sanji-bg",
+  robin: "bg-robin-bg",
+  usopp: "bg-usopp-bg",
+  chopper: "bg-chopper-bg",
+  franky: "bg-franky-bg",
+  brook: "bg-brook-bg",
+  jinbe: "bg-jinbe-bg",
+} as const;
+
+export type ThemeName = keyof typeof THEMES;
+export type Theme = (typeof THEMES)[ThemeName];
+export type TitleColor = (typeof TITLE_COLORS)[keyof typeof TITLE_COLORS];
+export type BgColor = (typeof BG_COLORS)[keyof typeof BG_COLORS];

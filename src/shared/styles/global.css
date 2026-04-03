@@ -38,7 +38,7 @@ body,
   .shadow-action:hover {
     box-shadow: 1px 1px 0 var(--color-action-text);
   }
-  .text-gradient {
+  .text-default-text {
     background: linear-gradient(
       to right,
       #f32c23 0%,
@@ -71,31 +71,42 @@ body,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --luffy-bg: #ff7d76;
-  --zoro-bg: #8ed8ae;
-  --usopp-bg: #f5b585;
-  --sanji-bg: #ecd791;
-  --nami-bg: #f8b08e;
-  --chopper-bg: #fa9f99;
-  --robin-bg: #b3b2d1;
-  --franky-bg: #a5d3f3;
-  --brook-bg: #d6d6d3;
-  --jinbe-bg: #b0d6f7;
-  --luffy-text: #ff655e;
-  --zoro-text: #6dbd90;
-  --usopp-text: #f49d59;
-  --sanji-text: #dfc264;
-  --nami-text: #fe6520;
-  --chopper-text: #f68e87;
-  --robin-text: #aba9d0;
-  --franky-text: #80c4f6;
-  --brook-text: #b9baaf;
-  --jinbe-text: #88bfee;
+
   --main-button-1: #d0a15f;
   --main-button-2: #ecc37e;
   --light-orange: #fff2da;
   --white: #f0f0f0;
   --brown: #4a372b;
+
+  /*Theme colors*/
+
+  /**Background**/
+
+  --default-bg: var(--light-orange);
+  --luffy-bg: #ff918b;
+  --zoro-bg: #9edab8;
+  --usopp-bg: #f7af79;
+  --sanji-bg: #ebd079;
+  --nami-bg: #faaf7d;
+  --chopper-bg: #faa09a;
+  --robin-bg: #bebcdd;
+  --franky-bg: #91cdf8;
+  --brook-bg: #d6d6d3;
+  --jinbe-bg: #99bbf0;
+
+  /**Text**/
+
+  /* El color de texto por defecto que se cambiaría es el gradiente linear definido en @layer utilities como text-default-text*/
+  --luffy-text: #c40800;
+  --zoro-text: #00662d;
+  --usopp-text: #aa4b00;
+  --sanji-text: #9d7903;
+  --nami-text: #cf4000;
+  --chopper-text: #c53f37;
+  --robin-text: #322f7b;
+  --franky-text: #0d5891;
+  --brook-text: #31312e;
+  --jinbe-text: #215a8b;
 }
 
 @theme {
@@ -105,6 +116,7 @@ body,
   --color-action-text: var(--brown);
   --color-sec-button: var(--light-orange);
   --color-checkbox: var(--light-orange);
+  --color-default-bg: var(--default-bg);
   --color-luffy-bg: var(--luffy-bg);
   --color-zoro-bg: var(--zoro-bg);
   --color-usopp-bg: var(--usopp-bg);
