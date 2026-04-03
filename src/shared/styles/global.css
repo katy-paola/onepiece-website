@@ -9,13 +9,13 @@ body,
 
 @font-face {
   font-family: "One Piece";
-  src: url("fonts/one-piece-font/OnePiece-zAqL.woff2") format("woff2");
+  src: url("/fonts/one-piece-font/onepiece.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Grandstander";
-  src: url("/fonts/grandstander/grandstander-variable.woff2") format("woff2");
+  src: url("/fonts/grandstander/grandstander.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
