@@ -21,3 +21,8 @@ export interface HeroContent {
   paragraphs: string[];
   subtitle?: string;
 }
+
+export interface Theme {
+  color: string;
+  logoUrl: string;
+}

@@ -2,6 +2,7 @@ import type { ThemeCard } from "./types";
 
 export const THEME_CARDS: ThemeCard[] = [
   {
+    id: "luffy",
     label: "Luffy",
     srcImg: "/theme-card/chibi-luffy.png",
     tooltip: {
@@ -10,15 +11,17 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "zoro",
     label: "Zoro",
     srcImg: "/theme-card/chibi-zoro.png",
     tooltip: {
       message:
-        "Hmph. Smart choice. Now be quiet, I'm trying to nap... and pass the sake.",
+        "Hmph. Smart choice. Now be quiet, I'm trying to nap.",
       color: "#8ed8ae",
     },
   },
   {
+    id: "usopp",
     label: "Usopp",
     srcImg: "/theme-card/chibi-usopp.png",
     tooltip: {
@@ -27,6 +30,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "sanji",
     label: "Sanji",
     srcImg: "/theme-card/chibi-sanji.png",
     tooltip: {
@@ -36,6 +40,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "nami",
     label: "Nami",
     srcImg: "/theme-card/chibi-nami.png",
     tooltip: {
@@ -45,6 +50,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "chopper",
     label: "Chopper",
     srcImg: "/theme-card/chibi-chopper.png",
     tooltip: {
@@ -54,6 +60,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "robin",
     label: "Robin",
     srcImg: "/theme-card/chibi-robin.png",
     tooltip: {
@@ -63,6 +70,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "franky",
     label: "Franky",
     srcImg: "/theme-card/chibi-franky.png",
     tooltip: {
@@ -72,6 +80,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "brook",
     label: "Brook",
     srcImg: "/theme-card/chibi-brook.png",
     tooltip: {
@@ -81,6 +90,7 @@ export const THEME_CARDS: ThemeCard[] = [
     },
   },
   {
+    id: "jinbe",
     label: "Jinbe",
     srcImg: "/theme-card/chibi-jinbe.png",
     tooltip: {

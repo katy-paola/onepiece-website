@@ -10,18 +10,20 @@ import FruitsMain from "./features/fruits/ui/FruitsMain";
 function App() {
   return (
     <>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomepageMain />} />
-          <Route path="/episodes" element={<SagasMain />} />
-          <Route path="/episodes/:sagaId" element={<EpisodesMain />} />
-          <Route path="/crew" element={<CrewMain />} />
-          <Route path="/lost/zoro" element={<ZoroMain />} />
-          <Route path="/fruits" element={<FruitsMain />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      <ThemeProvider>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomepageMain />} />
+            <Route path="/episodes" element={<SagasMain />} />
+            <Route path="/episodes/:sagaId" element={<EpisodesMain />} />
+            <Route path="/crew" element={<CrewMain />} />
+            <Route path="/lost/zoro" element={<ZoroMain />} />
+            <Route path="/fruits" element={<FruitsMain />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
     </>
   );
 }
@@ -31,6 +33,7 @@ export default App;
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import NotFound from "./shared/pages/NotFound";
+import { ThemeProvider } from "./shared/providers/ThemeProvider";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
