@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { normalizeQuery } from "../helpers/normalizeQuery";
-import { useDebouncedQuery } from "../../hooks/shared/useDebouncedQuery";
+import { useDebouncedQuery } from "./useDebouncedQuery";
 
 interface UseFilterOptions<T> {
   data: T[];

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import useGetFruits from "../../../hooks/useGetFruits";
+import useGetFruits from "../hooks/useGetFruits";
 import Filter from "../../../shared/ui/Filter";
 import Hero from "../../../shared/ui/Hero";
 import FruitsList from "../components/FruitsList";

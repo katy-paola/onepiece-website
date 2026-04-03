@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import type { Fruit } from "../utils/types";
-import { getFruits } from "../api/fruits";
+import type { Fruit } from "../types";
+import { getFruits } from "../../../api/fruits";
 
 export default function useGetFruits() {
   const [fruits, setFruits] = useState<Fruit[]>([]);
