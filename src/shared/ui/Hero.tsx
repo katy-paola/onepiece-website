@@ -1,4 +1,6 @@
-import { HERO_LIST } from "../consts";
+import { HERO_LIST, TITLE_COLORS, type TitleColor } from "../consts";
+import { useCurrentTheme } from "../hooks/useCurrentTheme";
+import { cn } from "../lib/utils";
 
 interface HeroProps {
   currentHero: "homepage" | "episodes" | "crew" | "fruits";
@@ -10,9 +12,18 @@ export default function Hero({ currentHero }: HeroProps) {
     title: "",
     paragraphs: [],
   };
+
+  const { theme } = useCurrentTheme();
+  const titleColor: TitleColor = TITLE_COLORS[theme.color];
+
   return (
     <section className="flex flex-col gap-4">
-      <h1 className="text-4xl font-onepiece text-gradient w-max md:text-5xl">
+      <h1
+        className={cn(
+          "text-4xl font-onepiece w-max transition-colors duration-300 md:text-5xl",
+          titleColor,
+        )}
+      >
         {hero.title}
       </h1>
       {hero.id === "homepage" ? (
