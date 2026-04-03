@@ -13,7 +13,7 @@ export default function Hero({ currentHero }: HeroProps) {
     paragraphs: [],
   };
 
-  const theme = useCurrentTheme();
+  const { theme } = useCurrentTheme();
   const titleColor: TitleColor = TITLE_COLORS[theme.color];
 
   return (

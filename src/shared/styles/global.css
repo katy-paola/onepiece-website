@@ -21,7 +21,7 @@ body,
 }
 
 @layer utilities {
-  .bg-default-bg {
+  .bg-radial {
     background: radial-gradient(var(--white), var(--light-orange));
   }
   .bg-gradient-action {
@@ -72,11 +72,17 @@ body,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --main-button-1: #d0a15f;
+  --main-button-2: #ecc37e;
+  --light-orange: #fff2da;
+  --white: #f0f0f0;
+  --brown: #4a372b;
+
   /*Theme colors*/
 
   /**Background**/
 
-  /* El color de fondo por defecto que se cambiaría es el gradiente radial definido en @layer utilities como bg-default-bg*/
+  --default-bg: var(--light-orange);
   --luffy-bg: #ff918b;
   --zoro-bg: #9edab8;
   --usopp-bg: #f7af79;
@@ -101,12 +107,6 @@ body,
   --franky-text: #0d5891;
   --brook-text: #31312e;
   --jinbe-text: #215a8b;
-
-  --main-button-1: #d0a15f;
-  --main-button-2: #ecc37e;
-  --light-orange: #fff2da;
-  --white: #f0f0f0;
-  --brown: #4a372b;
 }
 
 @theme {
@@ -116,6 +116,7 @@ body,
   --color-action-text: var(--brown);
   --color-sec-button: var(--light-orange);
   --color-checkbox: var(--light-orange);
+  --color-default-bg: var(--default-bg);
   --color-luffy-bg: var(--luffy-bg);
   --color-zoro-bg: var(--zoro-bg);
   --color-usopp-bg: var(--usopp-bg);

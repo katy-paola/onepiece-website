@@ -13,7 +13,7 @@ export default function FruitModal({
   fruit,
   setSelectedFruit,
 }: FruitDetailsProps) {
-  const theme = useCurrentTheme();
+  const { theme } = useCurrentTheme();
   const bgColor: BgColor = BG_COLORS[theme.color];
 
   const handleCancel = () => {

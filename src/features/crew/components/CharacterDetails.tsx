@@ -16,7 +16,7 @@ export default function CharacterDetails({
   character,
   setSelectedCharacter,
 }: CharacterDetailsProps) {
-  const theme = useCurrentTheme();
+  const { theme } = useCurrentTheme();
   const bgColor: BgColor = BG_COLORS[theme.color];
 
   const handleCancel = () => {

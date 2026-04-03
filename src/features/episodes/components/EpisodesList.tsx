@@ -17,7 +17,7 @@ interface EpisodesListProps {
 
 const EpisodesList = forwardRef<GroupedVirtuosoHandle, EpisodesListProps>(
   function EpisodesList({ data }, ref) {
-    const theme = useCurrentTheme();
+    const { theme } = useCurrentTheme();
     const bgColor: BgColor = BG_COLORS[theme.color];
     return (
       <GroupedVirtuoso

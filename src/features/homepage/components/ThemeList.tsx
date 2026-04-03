@@ -22,7 +22,7 @@ export default function ThemeList() {
             data-tooltip-id={`${card.label.toLowerCase()}-tooltip-id`}
             href="#"
             onClick={(e) => handleClick(e, card.id as ThemeName)}
-            className="flex flex-col justify-between p-2 text-action-text bg-default-bg border border-stroke/30 shadow-card hover:shadow-none"
+            className="flex flex-col justify-between p-2 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
           >
             <span className="w-full text-start">{card.label}</span>
             <img

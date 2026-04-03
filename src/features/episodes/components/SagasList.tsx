@@ -9,7 +9,7 @@ export default function SagasList() {
         <li key={index}>
           <Link
             to={saga.href}
-            className="flex justify-between items-center px-5 py-4 text-action-text bg-default-bg border border-stroke/30 shadow-card hover:shadow-none"
+            className="flex justify-between items-center px-5 py-4 text-action-text bg-radial border border-stroke/30 shadow-card hover:shadow-none"
           >
             {saga.title}
             <ArrowRightIcon />

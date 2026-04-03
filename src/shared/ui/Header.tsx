@@ -6,6 +6,7 @@ import CancelIcon from "../icons/CancelIcon";
 import { useState } from "react";
 import { cn } from "../lib/utils";
 import { useCurrentTheme } from "../hooks/useCurrentTheme";
+import DefaultThemeIcon from "../icons/DefaultThemeIcon";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -14,13 +15,13 @@ export default function Header() {
   const activeTab =
     pathname === "/lost/zoro" ? "/crew" : `/${pathname.split("/")[1]}`;
 
-  const theme = useCurrentTheme();
+  const { theme, setTheme, themeName } = useCurrentTheme();
   const bgColor: BgColor = BG_COLORS[theme.color];
 
   return (
     <header
       className={cn(
-        "fixed top-0 w-full flex justify-between items-center p-4 z-10 transition-colors duration-300 lg:px-12 lg:py-8",
+        "fixed top-0 w-full flex justify-between items-center p-4 z-10 border-b border-b-stroke/10 transition-colors duration-300 lg:px-12 lg:py-8",
         bgColor,
       )}
     >
@@ -35,7 +36,7 @@ export default function Header() {
           "md:static md:translate-none md:right-auto md:w-max md:p-0",
         )}
       >
-        <ul className="flex-1 md:flex">
+        <ul className="flex-1 items-center md:flex">
           {NAVBAR_LINKS.map((link, index) => (
             <li key={index} className="flex" onClick={() => setIsOpen(false)}>
               <Link
@@ -49,6 +50,18 @@ export default function Header() {
               </Link>
             </li>
           ))}
+
+          <button
+            title="Switch to default theme"
+            className={cn(
+              "grid place-items-center size-0 rounded-4xl hover:bg-white/40 invisible opacity-0  transition-all duration-300",
+              themeName !== "default" &&
+                "size-7 ml-2 opacity-600 visible static",
+            )}
+            onClick={() => setTheme("default")}
+          >
+            <DefaultThemeIcon />
+          </button>
         </ul>
         <Button
           className="md:hidden"

@@ -4,7 +4,7 @@ import { useCurrentTheme } from "../hooks/useCurrentTheme";
 import { cn } from "../lib/utils";
 
 export default function NotFound() {
-  const theme = useCurrentTheme();
+  const { theme } = useCurrentTheme();
   const titleColor: TitleColor = TITLE_COLORS[theme.color];
   return (
     <section className="flex flex-col gap-6">

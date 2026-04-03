@@ -18,7 +18,7 @@ export default function FruitsList({ fruits }: { fruits: Fruit[] }) {
           <li key={fruit.id} title={`${fruit.roman_name} / ${fruit.name}`}>
             <button
               onClick={() => setSelectedFruit(fruit)}
-              className="flex items-center gap-2 p-2 w-full bg-default-bg border border-stroke/30 shadow-card hover:shadow-none transition-all"
+              className="flex items-center gap-2 p-2 w-full bg-radial border border-stroke/30 shadow-card hover:shadow-none transition-all"
             >
               <picture className="h-16 aspect-square">
                 <img
