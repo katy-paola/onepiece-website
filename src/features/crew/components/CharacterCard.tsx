@@ -19,6 +19,7 @@ export default function CharacterCard({ data }: CharacterCardProps) {
       </p>
       <picture className={cn(isZoro && "md:row-span-2 md:row-start-1")}>
         <img
+          loading="lazy"
           src={data.srcImg}
           alt={`${data.name} poster`}
           className="border border-stroke/30 md:max-h-45"

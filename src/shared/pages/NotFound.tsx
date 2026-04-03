@@ -17,7 +17,12 @@ export default function NotFound() {
         >
           404 - Page not found
         </h1>
-        <img src="/zoro-lost.png" alt="Zoro lost" className="w-40" />
+        <img
+          loading="lazy"
+          src="/zoro-lost.png"
+          alt="Zoro lost"
+          className="w-40"
+        />
         <p className="text-center">Lost enough to run into Zoro.</p>
       </div>
       <div className="flex justify-center gap-4">

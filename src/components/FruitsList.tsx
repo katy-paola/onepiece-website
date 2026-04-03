@@ -8,7 +8,7 @@ export default function FruitsList({ fruits }: { fruits: Fruit[] }) {
       data={fruits}
       itemContent={(_, fruit) => (
         <article key={fruit.id}>
-          <img src={fruit.filename} alt={fruit.roman_name} />
+          <img loading="lazy" src={fruit.filename} alt={fruit.roman_name} />
           <h2>
             {fruit.roman_name} / {fruit.name}
           </h2>

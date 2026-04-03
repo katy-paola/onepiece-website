@@ -16,7 +16,7 @@ export const THEME_CARDS: ThemeCard[] = [
     srcImg: "/theme-card/chibi-zoro.png",
     tooltip: {
       message:
-        "Hmph. Smart choice. Now be quiet, I'm trying to nap... and pass the sake.",
+        "Hmph. Smart choice. Now be quiet, I'm trying to nap.",
       color: "#8ed8ae",
     },
   },
