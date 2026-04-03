@@ -59,6 +59,7 @@ export default function CharacterDetails({
           <div className="flex gap-1 overflow-x-auto">
             {character.gallery?.map((photo, index) => (
               <img
+                loading="lazy"
                 key={index}
                 src={photo}
                 alt={`Zoro's photo number ${index + 1}`}
@@ -69,6 +70,7 @@ export default function CharacterDetails({
         ) : (
           <picture>
             <img
+              loading="lazy"
               src={character.srcImg}
               alt={`${character.name}'s photo`}
               className="border border-stroke/30"

@@ -26,6 +26,7 @@ export default function ThemeList() {
           >
             <span className="w-full text-start">{card.label}</span>
             <img
+              loading="lazy"
               src={card.srcImg}
               alt={`${card.label} chibi photo`}
               className="size-14 self-end -mt-4"
