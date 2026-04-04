@@ -26,7 +26,7 @@ export default function Filter({ data, className }: FilterProps) {
   return (
     <section
       className={cn(
-        "flex flex-col gap-3 md:grid md:grid-cols-[1fr_auto] md:gap-6 lg:flex",
+        "grid gap-3 h-max md:grid-cols-[1fr_auto] md:gap-6 lg:flex",
         className,
       )}
     >
@@ -35,7 +35,7 @@ export default function Filter({ data, className }: FilterProps) {
         placeholder={data.placeholder}
         inputAttributes={{ value: data.query, onChange: data.onQueryChange }}
       />
-      <div className="flex gap-2 w-full overflow-x-auto lg:flex-col">
+      <div className="flex gap-2 w-full h-max overflow-x-auto lg:flex-col">
         {data.categories.map((category) => (
           <Checkbox
             key={category.id}

@@ -19,7 +19,7 @@ export default function Searchbar({
   return (
     <label
       className={cn(
-        "flex items-center gap-2 px-5 py-4 border border-action-text/70 focus-within:border-action-text transition-colors",
+        "flex items-center gap-2 px-5 py-4 h-max border border-action-text/70 focus-within:border-action-text transition-colors",
         className,
       )}
     >
