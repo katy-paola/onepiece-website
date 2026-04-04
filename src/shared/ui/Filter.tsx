@@ -26,7 +26,7 @@ export default function Filter({ data, className }: FilterProps) {
   return (
     <section
       className={cn(
-        "grid gap-3 h-max md:grid-cols-[1fr_auto] md:gap-6 lg:flex",
+        "grid gap-3 h-max md:grid-cols-[1fr_auto] md:gap-6 lg:flex lg:flex-col",
         className,
       )}
     >
