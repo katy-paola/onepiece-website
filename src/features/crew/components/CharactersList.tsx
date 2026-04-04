@@ -31,11 +31,14 @@ export default function CharactersList() {
             )}
           >
             {character.id === "zoro" ? (
-              <Link to="/lost/zoro">
+              <Link className="contents" to="/lost/zoro">
                 <CharacterCard data={character} />
               </Link>
             ) : (
-              <button onClick={() => setSelectedCharacter(character)}>
+              <button
+                className="contents"
+                onClick={() => setSelectedCharacter(character)}
+              >
                 <CharacterCard data={character} />
               </button>
             )}

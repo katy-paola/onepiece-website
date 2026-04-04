@@ -54,17 +54,21 @@ export default function CharacterDetails({
         </div>
         <small className="font-semibold text-sm">{character.job}</small>
       </header>
-      <section className="flex flex-col gap-4">
+
+      <section className="grid gap-4">
         {character.id === "zoro" ? (
           <div className="flex gap-1 overflow-x-auto">
             {character.gallery?.map((photo, index) => (
-              <img
-                loading="lazy"
-                key={index}
-                src={photo}
-                alt={`Zoro's photo number ${index + 1}`}
-                className="border border-stroke/30"
-              />
+              <picture key={index} className="shrink-0">
+                <img
+                  loading="lazy"
+                  src={photo}
+                  alt={`Zoro's photo number ${index + 1}`}
+                  className={cn(
+                    "h-full w-auto object-contain border border-stroke/30",
+                  )}
+                />
+              </picture>
             ))}
           </div>
         ) : (
@@ -77,16 +81,15 @@ export default function CharacterDetails({
             />
           </picture>
         )}
-        <div className="flex justify-between font-medium">
-          <div className="flex gap-4">
-            <p className="flex gap-1">
-              <CakeIcon />
-              {character.birthday}
-            </p>
-            <p>{character.age} years old</p>
-            {character.id === "zoro" && <p>1,111,000,000</p>}
-          </div>
-          <p>{character.size} cm</p>
+        <div className="flex justify-between gap-4 flex-wrap font-medium md:justify-start">
+          <p className="flex gap-1">
+            <CakeIcon />
+            {character.birthday}
+          </p>
+          <p>{character.age} years old</p>
+          {character.id === "zoro" && <p>1,111,000,000</p>}
+
+          <p className="md:flex-1 md:text-end">{character.size} cm</p>
         </div>
         {character.id === "zoro" ? (
           <div className="flex flex-col gap-4 text-text">

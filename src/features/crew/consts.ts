@@ -6,7 +6,7 @@ const ZORO_GALLERY = Array.from(
   (_, i) => `/zoro/zoro${i + 1}.png`,
 );
 
-export const EMPTY_CHARACTER = {
+export const EMPTY_CHARACTER: Character = {
   id: "",
   srcImg: "",
   name: "",
