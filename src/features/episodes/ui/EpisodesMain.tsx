@@ -83,7 +83,7 @@ export default function EpisodesMain() {
         </Link>
         <h1 className="text-3xl font-semibold">{currentSaga.title}</h1>
       </header>
-      <section className="grid gap-6 h-full lg:grid-cols-[8fr_2fr]">
+      <section className="grid grid-rows-[auto_1fr] gap-6 h-full lg:grid-cols-[8fr_2fr]">
         <Filter
           data={{
             categories: filterCategories,
